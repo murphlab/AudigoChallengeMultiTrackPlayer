@@ -47,6 +47,21 @@ class AudioController: NSObject {
     // TODO: throw?
     public func setAudioProject(_ audioProject: AudioProject) {
         self.audioProject = audioProject
+     
+        setUpNodes()
+    }
+    
+    // MARK: - Private
+    
+    private func setUpNodes() {
+        guard let audioProject = audioProject else {
+            return
+        }
+        
+        for trackFile in audioProject.tracks {
+            print("== trackFile: \(trackFile)")
+        }
+        
     }
 
 }
