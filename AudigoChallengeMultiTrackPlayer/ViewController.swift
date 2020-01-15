@@ -22,6 +22,8 @@ class ViewController: UIViewController {
             audioController.setAudioProject(project)
             audioController.play()
             
+            self.title = "Project: \(PROJECT_NAME)"
+            
         } else {
             print("ERROR: Could not load project with name: \(PROJECT_NAME)")
         }
