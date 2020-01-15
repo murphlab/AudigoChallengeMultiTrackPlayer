@@ -20,6 +20,7 @@
 		BE36086723CF86390020DAD0 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086623CF86390020DAD0 /* AudioController.swift */; };
 		BE36086823CF8C890020DAD0 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086623CF86390020DAD0 /* AudioController.swift */; };
 		BE36086A23CF8DD50020DAD0 /* AudioProject.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE36086923CF8DD50020DAD0 /* AudioProject.plist */; };
+		BE36086D23CF8F380020DAD0 /* AudioProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086C23CF8F380020DAD0 /* AudioProject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		BE36086323CF84020020DAD0 /* Overheads.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Overheads.wav; sourceTree = "<group>"; };
 		BE36086623CF86390020DAD0 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		BE36086923CF8DD50020DAD0 /* AudioProject.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AudioProject.plist; sourceTree = "<group>"; };
+		BE36086C23CF8F380020DAD0 /* AudioProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				BE36086123CF83E90020DAD0 /* Media */,
+				BE36086B23CF8F110020DAD0 /* Model */,
 				BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */,
 				BE36081023CF7D5F0020DAD0 /* SceneDelegate.swift */,
 				BE36086623CF86390020DAD0 /* AudioController.swift */,
@@ -147,6 +150,14 @@
 				BE36086923CF8DD50020DAD0 /* AudioProject.plist */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		BE36086B23CF8F110020DAD0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE36086C23CF8F380020DAD0 /* AudioProject.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE36086D23CF8F380020DAD0 /* AudioProject.swift in Sources */,
 				BE36081323CF7D5F0020DAD0 /* ViewController.swift in Sources */,
 				BE36080F23CF7D5F0020DAD0 /* AppDelegate.swift in Sources */,
 				BE36086723CF86390020DAD0 /* AudioController.swift in Sources */,
