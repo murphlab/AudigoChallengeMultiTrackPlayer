@@ -78,17 +78,16 @@ class AudioController: NSObject {
         
     }
     
+    /// Detach current player nodes from the engine and clear the playerNodes array
     private func clearPlayerNodes() {
         for playerNode in playerNodes {
             audioEngine.detach(playerNode.playerNode)
         }
         playerNodes = [PlayerNodeWithBuffer]()
     }
-    
-    
-
 }
 
+/// Container for playerNode + associated buffer
 fileprivate class PlayerNodeWithBuffer {
     var playerNode = AVAudioPlayerNode()
     var buffer: AVAudioPCMBuffer!
