@@ -8,6 +8,11 @@
 
 import Foundation
 
+/// Single project:
 public struct AudioProject: Codable {
     public var tracks: [String]
 }
+
+/// Collection of projects:
+public typealias AudioProjects = [String: AudioProject]
+
