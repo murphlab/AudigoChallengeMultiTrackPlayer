@@ -15,6 +15,8 @@
 		BE36081B23CF7D610020DAD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE36081923CF7D610020DAD0 /* LaunchScreen.storyboard */; };
 		BE36082623CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36082523CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.swift */; };
 		BE36083123CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36083023CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift */; };
+		BE36086423CF84020020DAD0 /* Kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE36086223CF84020020DAD0 /* Kick.wav */; };
+		BE36086523CF84020020DAD0 /* Overheads.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE36086323CF84020020DAD0 /* Overheads.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BE36082C23CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudigoChallengeMultiTrackPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE36083023CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudigoChallengeMultiTrackPlayerUITests.swift; sourceTree = "<group>"; };
 		BE36083223CF7D610020DAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE36086223CF84020020DAD0 /* Kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Kick.wav; sourceTree = "<group>"; };
+		BE36086323CF84020020DAD0 /* Overheads.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Overheads.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		BE36080D23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				BE36086123CF83E90020DAD0 /* Media */,
 				BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */,
 				BE36081023CF7D5F0020DAD0 /* SceneDelegate.swift */,
 				BE36081223CF7D5F0020DAD0 /* ViewController.swift */,
@@ -126,6 +131,15 @@
 				BE36083223CF7D610020DAD0 /* Info.plist */,
 			);
 			path = AudigoChallengeMultiTrackPlayerUITests;
+			sourceTree = "<group>";
+		};
+		BE36086123CF83E90020DAD0 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				BE36086223CF84020020DAD0 /* Kick.wav */,
+				BE36086323CF84020020DAD0 /* Overheads.wav */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +246,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE36086523CF84020020DAD0 /* Overheads.wav in Resources */,
 				BE36081B23CF7D610020DAD0 /* LaunchScreen.storyboard in Resources */,
 				BE36081823CF7D610020DAD0 /* Assets.xcassets in Resources */,
+				BE36086423CF84020020DAD0 /* Kick.wav in Resources */,
 				BE36081623CF7D5F0020DAD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
