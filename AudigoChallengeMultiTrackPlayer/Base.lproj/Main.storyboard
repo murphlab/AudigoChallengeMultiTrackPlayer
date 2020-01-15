@@ -34,12 +34,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vBg-MS-LSC">
+                                <rect key="frame" x="0.0" y="126" width="414" height="750"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="KV9-bY-3aM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DFS-pf-zKQ"/>
+                            <constraint firstAttribute="bottom" secondItem="vBg-MS-LSC" secondAttribute="bottom" constant="20" symbolic="YES" id="JMg-Mw-K4S"/>
                             <constraint firstItem="KV9-bY-3aM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jvp-gL-Eoi"/>
+                            <constraint firstItem="vBg-MS-LSC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SXl-LV-yih"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KV9-bY-3aM" secondAttribute="trailing" id="fME-CZ-BFm"/>
+                            <constraint firstItem="vBg-MS-LSC" firstAttribute="top" secondItem="KV9-bY-3aM" secondAttribute="bottom" constant="8" symbolic="YES" id="pgh-Iu-rDP"/>
+                            <constraint firstItem="vBg-MS-LSC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rLf-u2-pLY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
