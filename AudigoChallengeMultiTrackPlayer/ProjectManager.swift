@@ -20,7 +20,7 @@ public struct ProjectManager {
         {
             return projects
         } else {
-            print("Could not obtail audio projets plist file")
+            print("Could not obtain audio projets plist file")
             return nil
         }
     }
