@@ -18,6 +18,7 @@
 		BE36086423CF84020020DAD0 /* Kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE36086223CF84020020DAD0 /* Kick.wav */; };
 		BE36086523CF84020020DAD0 /* Overheads.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE36086323CF84020020DAD0 /* Overheads.wav */; };
 		BE36086723CF86390020DAD0 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086623CF86390020DAD0 /* AudioController.swift */; };
+		BE36086823CF8C890020DAD0 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086623CF86390020DAD0 /* AudioController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE36086823CF8C890020DAD0 /* AudioController.swift in Sources */,
 				BE36082623CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
