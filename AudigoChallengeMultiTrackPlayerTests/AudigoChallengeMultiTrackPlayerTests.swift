@@ -23,6 +23,13 @@ class AudigoChallengeMultiTrackPlayerTests: XCTestCase {
         let _ = AudioController()
     }
     
+    func testLoadAudioProjects() {
+        let audioProjects = ProjectManager.loadAudioProjects()
+        assert(audioProjects != nil)
+        let drumsProject = audioProjects!["drums"]
+        assert(drumsProject != nil)
+    }
+    
     
 
     func testPerformanceExample() {
