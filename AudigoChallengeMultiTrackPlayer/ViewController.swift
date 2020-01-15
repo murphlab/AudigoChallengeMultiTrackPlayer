@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let audioController = AudioController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
