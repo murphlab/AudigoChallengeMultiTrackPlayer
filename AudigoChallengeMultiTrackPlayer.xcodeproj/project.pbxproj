@@ -17,6 +17,7 @@
 		BE36083123CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36083023CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift */; };
 		BE36086423CF84020020DAD0 /* Kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE36086223CF84020020DAD0 /* Kick.wav */; };
 		BE36086523CF84020020DAD0 /* Overheads.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE36086323CF84020020DAD0 /* Overheads.wav */; };
+		BE36086723CF86390020DAD0 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086623CF86390020DAD0 /* AudioController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BE36083223CF7D610020DAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE36086223CF84020020DAD0 /* Kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Kick.wav; sourceTree = "<group>"; };
 		BE36086323CF84020020DAD0 /* Overheads.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Overheads.wav; sourceTree = "<group>"; };
+		BE36086623CF86390020DAD0 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				BE36086123CF83E90020DAD0 /* Media */,
 				BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */,
 				BE36081023CF7D5F0020DAD0 /* SceneDelegate.swift */,
+				BE36086623CF86390020DAD0 /* AudioController.swift */,
 				BE36081223CF7D5F0020DAD0 /* ViewController.swift */,
 				BE36081423CF7D5F0020DAD0 /* Main.storyboard */,
 				BE36081723CF7D610020DAD0 /* Assets.xcassets */,
@@ -277,6 +280,7 @@
 			files = (
 				BE36081323CF7D5F0020DAD0 /* ViewController.swift in Sources */,
 				BE36080F23CF7D5F0020DAD0 /* AppDelegate.swift in Sources */,
+				BE36086723CF86390020DAD0 /* AudioController.swift in Sources */,
 				BE36081123CF7D5F0020DAD0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
