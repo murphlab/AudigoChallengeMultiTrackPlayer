@@ -56,9 +56,19 @@ class AudioController: NSObject {
             // TODO: better exception handling
             try! audioEngine.start()
             
+            var startTime: AVAudioTime? = nil
+            
             for player in playerNodes {
+                
+                if startTime == nil {
+                    let delayTime = 0.1
+                    let outputFormat = player.playerNode.outputFormat(forBus: 0)
+                    let startSampleTime = player.playerNode.lastRenderTime!.sampleTime + AVAudioFramePosition(delayTime * outputFormat.sampleRate)
+                    startTime = AVAudioTime(sampleTime: startSampleTime, atRate: outputFormat.sampleRate)
+                    
+                }
                 player.playerNode.scheduleBuffer(player.buffer, at: nil, options: [.loops], completionHandler: nil)
-                player.playerNode.play()
+                player.playerNode.play(at: startTime)
             }
             
         }
