@@ -39,11 +39,14 @@ class AudioController: NSObject {
     
     // MARK: - Public
     
-    /// The current audio project being managed
-    public var audioProject: AudioProject? {
-        didSet {
-            print("Set audio project: \(String(describing: audioProject))")
-        }
+    /// current audio project, publically readonly. use setAudioProject to set
+    private(set) public var audioProject: AudioProject?
+    
+    
+    /// set audio project
+    // TODO: throw?
+    public func setAudioProject(_ audioProject: AudioProject) {
+        self.audioProject = audioProject
     }
 
 }

@@ -17,7 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        audioController.audioProject = ProjectManager.loadAudioProjects()?[PROJECT_NAME]
+        if let project = ProjectManager.loadAudioProjects()?[PROJECT_NAME] {
+            audioController.setAudioProject(project)
+        } else {
+            print("ERROR: Could not load project with name: \(PROJECT_NAME)")
+        }
     }
 
     // MARK: - Private
