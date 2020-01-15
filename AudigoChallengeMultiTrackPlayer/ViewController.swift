@@ -18,7 +18,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         if let project = ProjectManager.loadAudioProjects()?[PROJECT_NAME] {
+            
             audioController.setAudioProject(project)
+            audioController.play()
+            
         } else {
             print("ERROR: Could not load project with name: \(PROJECT_NAME)")
         }
