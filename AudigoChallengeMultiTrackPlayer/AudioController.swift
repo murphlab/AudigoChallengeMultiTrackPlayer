@@ -80,6 +80,10 @@ class AudioController: NSObject {
                 // TODO: more elegant error handling
                 fatalError("Error reading audio file \(trackFile) into buffer: \(error)")
             }
+            playerNodes.append(playerWithBuffer)
+            audioEngine.attach(playerWithBuffer.playerNode)
+            
+            // TODO: Connect node
             
         }
         
