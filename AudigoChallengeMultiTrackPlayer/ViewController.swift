@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stopButtonTapped(_ sender: Any) {
+        audioController.stop()
     }
     
     // MARK: - Private
