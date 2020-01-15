@@ -82,9 +82,9 @@ class AudioController: NSObject {
             }
             playerNodes.append(playerWithBuffer)
             audioEngine.attach(playerWithBuffer.playerNode)
-            
-            // TODO: Connect node
-            
+            audioEngine.connect(playerWithBuffer.playerNode,
+                                to: audioEngine.mainMixerNode,
+                                format: playerWithBuffer.buffer.format)
         }
         
     }
