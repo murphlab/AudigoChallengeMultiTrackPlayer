@@ -16,6 +16,8 @@ class AudioController: NSObject {
         initSession()
     }
     
+    // MARK: - Private init methods
+    
     private func initSession() {
         let session = AVAudioSession.sharedInstance()
         do {
@@ -32,7 +34,14 @@ class AudioController: NSObject {
         } catch {
             fatalError("Could not activeate audio session")
         }
-        
+    }
+    
+    // MARK: - Public
+    
+    public var audioProject: AudioProject? {
+        didSet {
+            print("Set audio project: \(String(describing: audioProject))")
+        }
     }
 
 }
