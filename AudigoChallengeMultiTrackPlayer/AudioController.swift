@@ -56,12 +56,10 @@ class AudioController: NSObject {
             // TODO: better exception handling
             try! audioEngine.start()
             
-            // TODO: FOR NOW JUST ACCESSING ONE PLAYER:
-            let player = playerNodes.first!
-            
-            player.playerNode.scheduleBuffer(player.buffer, at: nil, options: [.loops], completionHandler: nil)
-            
-            player.playerNode.play()
+            for player in playerNodes {
+                player.playerNode.scheduleBuffer(player.buffer, at: nil, options: [.loops], completionHandler: nil)
+                player.playerNode.play()
+            }
             
         }
         
