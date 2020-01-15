@@ -11,16 +11,27 @@ import Foundation
 /// Utilities for managing project data
 public struct ProjectManager {
     
+    private static let PROJECTS_RESOURCE_NAME = "AudioProjects"
+    private static let PROJECTS_RESOURCE_TYPE = "plist"
+    
     // load data for all audio projects
     public static func loadAudioProjects() -> AudioProjects? {
-        if
-            let path = Bundle.main.path(forResource: "AudioProjects", ofType: "plist"),
-            let xml = FileManager.default.contents(atPath: path),
-            let projects = try? PropertyListDecoder().decode(AudioProjects.self, from: xml)
-        {
+        
+        guard let path = Bundle.main.path(forResource: PROJECTS_RESOURCE_NAME, ofType: PROJECTS_RESOURCE_TYPE) else {
+            print("ERROR: Could not obtain path for resource: \(PROJECTS_RESOURCE_NAME)")
+            return nil
+        }
+        
+        guard let xml = FileManager.default.contents(atPath: path) else {
+            print("ERROR: Could not read xml from resource: \(PROJECTS_RESOURCE_NAME)")
+            return nil
+        }
+        
+        do {
+            let projects = try PropertyListDecoder().decode(AudioProjects.self, from: xml)
             return projects
-        } else {
-            print("Could not obtain audio projets plist file")
+        } catch {
+            print("Exception thrown decoding resource: \(PROJECTS_RESOURCE_NAME): \(error.localizedDescription)")
             return nil
         }
     }
