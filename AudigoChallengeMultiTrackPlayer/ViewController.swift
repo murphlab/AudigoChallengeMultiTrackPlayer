@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         if let project = ProjectManager.loadAudioProjects()?[PROJECT_NAME] {
             
             audioController.setAudioProject(project)
-            audioController.play()
             
             self.title = "Project: \(PROJECT_NAME)"
             
@@ -29,6 +28,13 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func playButtonTapped(_ sender: Any) {
+        audioController.play()
+    }
+    
+    @IBAction func stopButtonTapped(_ sender: Any) {
+    }
+    
     // MARK: - Private
 
 }
