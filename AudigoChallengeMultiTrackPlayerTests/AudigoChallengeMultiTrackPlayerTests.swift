@@ -28,6 +28,7 @@ class AudigoChallengeMultiTrackPlayerTests: XCTestCase {
         assert(audioProjects != nil)
         let drumsProject = audioProjects!["drums"]
         assert(drumsProject != nil)
+        assert(drumsProject!.tracks.count == 2)
     }
     
     
