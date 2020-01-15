@@ -10,13 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let PROJECT_NAME = "drums"
+    
     let audioController = AudioController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        audioController.audioProject = ProjectManager.loadAudioProjects()?[PROJECT_NAME]
     }
 
+    // MARK: - Private
 
 }
 
