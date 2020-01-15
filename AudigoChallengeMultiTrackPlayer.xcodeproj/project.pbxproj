@@ -19,7 +19,7 @@
 		BE36086523CF84020020DAD0 /* Overheads.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE36086323CF84020020DAD0 /* Overheads.wav */; };
 		BE36086723CF86390020DAD0 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086623CF86390020DAD0 /* AudioController.swift */; };
 		BE36086823CF8C890020DAD0 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086623CF86390020DAD0 /* AudioController.swift */; };
-		BE36086A23CF8DD50020DAD0 /* AudioProject.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE36086923CF8DD50020DAD0 /* AudioProject.plist */; };
+		BE36086A23CF8DD50020DAD0 /* AudioProjects.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE36086923CF8DD50020DAD0 /* AudioProjects.plist */; };
 		BE36086D23CF8F380020DAD0 /* AudioProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086C23CF8F380020DAD0 /* AudioProject.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +58,7 @@
 		BE36086223CF84020020DAD0 /* Kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Kick.wav; sourceTree = "<group>"; };
 		BE36086323CF84020020DAD0 /* Overheads.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Overheads.wav; sourceTree = "<group>"; };
 		BE36086623CF86390020DAD0 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
-		BE36086923CF8DD50020DAD0 /* AudioProject.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AudioProject.plist; sourceTree = "<group>"; };
+		BE36086923CF8DD50020DAD0 /* AudioProjects.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AudioProjects.plist; sourceTree = "<group>"; };
 		BE36086C23CF8F380020DAD0 /* AudioProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +147,7 @@
 			children = (
 				BE36086223CF84020020DAD0 /* Kick.wav */,
 				BE36086323CF84020020DAD0 /* Overheads.wav */,
-				BE36086923CF8DD50020DAD0 /* AudioProject.plist */,
+				BE36086923CF8DD50020DAD0 /* AudioProjects.plist */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE36086523CF84020020DAD0 /* Overheads.wav in Resources */,
-				BE36086A23CF8DD50020DAD0 /* AudioProject.plist in Resources */,
+				BE36086A23CF8DD50020DAD0 /* AudioProjects.plist in Resources */,
 				BE36081B23CF7D610020DAD0 /* LaunchScreen.storyboard in Resources */,
 				BE36081823CF7D610020DAD0 /* Assets.xcassets in Resources */,
 				BE36086423CF84020020DAD0 /* Kick.wav in Resources */,
