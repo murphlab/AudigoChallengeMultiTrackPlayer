@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+/// Manages all of our audio playback functions
 class AudioController: NSObject {
     
     override init() {
@@ -38,6 +39,7 @@ class AudioController: NSObject {
     
     // MARK: - Public
     
+    /// The current audio project being managed
     public var audioProject: AudioProject? {
         didSet {
             print("Set audio project: \(String(describing: audioProject))")

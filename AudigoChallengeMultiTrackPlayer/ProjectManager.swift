@@ -8,7 +8,10 @@
 
 import Foundation
 
+/// Utilities for managing project data
 public struct ProjectManager {
+    
+    // load data for all audio projects
     public static func loadAudioProjects() -> AudioProjects? {
         if
             let path = Bundle.main.path(forResource: "AudioProjects", ofType: "plist"),
