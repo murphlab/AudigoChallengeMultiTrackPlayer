@@ -53,15 +53,43 @@ class AudioController: NSObject {
     
     // MARK: - Private
     
+    private var audioEngine = AVAudioEngine()
+    
+    private var playerNodes = [PlayerNodeWithBuffer]()
+    
     private func setUpNodes() {
         guard let audioProject = audioProject else {
             return
         }
         
+        clearPlayerNodes()
+        
         for trackFile in audioProject.tracks {
-            print("== trackFile: \(trackFile)")
+            guard let trackURL = Bundle.main.url(forResource: trackFile, withExtension: "wav") else {
+                // TODO: more elegant error handling
+                fatalError("Could not obtail url for track: \(trackFile)")
+            }
+            //print("trackURL: \(String(describing: trackURL))")
+            let playerWithBuffer = PlayerNodeWithBuffer()
+            // TODO: more elegant error handling:
+            let audioFile = try! AVAudioFile(forReading: trackURL)
+            playerWithBuffer.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
         }
         
     }
+    
+    private func clearPlayerNodes() {
+        for playerNode in playerNodes {
+            audioEngine.detach(playerNode.playerNode)
+        }
+        playerNodes = [PlayerNodeWithBuffer]()
+    }
+    
+    
 
+}
+
+fileprivate class PlayerNodeWithBuffer {
+    var playerNode = AVAudioPlayerNode()
+    var buffer: AVAudioPCMBuffer!
 }
