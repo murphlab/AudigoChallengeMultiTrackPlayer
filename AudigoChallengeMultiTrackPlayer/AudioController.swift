@@ -74,6 +74,13 @@ class AudioController: NSObject {
             // TODO: more elegant error handling:
             let audioFile = try! AVAudioFile(forReading: trackURL)
             playerWithBuffer.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
+            do {
+                try audioFile.read(into: playerWithBuffer.buffer)
+            } catch {
+                // TODO: more elegant error handling
+                fatalError("Error reading audio file \(trackFile) into buffer: \(error)")
+            }
+            
         }
         
     }
