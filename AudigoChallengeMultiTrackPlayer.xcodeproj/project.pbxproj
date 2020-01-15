@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BE36080F23CF7D5F0020DAD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */; };
+		BE36081123CF7D5F0020DAD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36081023CF7D5F0020DAD0 /* SceneDelegate.swift */; };
+		BE36081323CF7D5F0020DAD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36081223CF7D5F0020DAD0 /* ViewController.swift */; };
+		BE36081623CF7D5F0020DAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE36081423CF7D5F0020DAD0 /* Main.storyboard */; };
+		BE36081823CF7D610020DAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE36081723CF7D610020DAD0 /* Assets.xcassets */; };
+		BE36081B23CF7D610020DAD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE36081923CF7D610020DAD0 /* LaunchScreen.storyboard */; };
+		BE36082623CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36082523CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.swift */; };
+		BE36083123CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36083023CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE36082223CF7D610020DAD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE36080323CF7D5F0020DAD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE36080A23CF7D5F0020DAD0;
+			remoteInfo = AudigoChallengeMultiTrackPlayer;
+		};
+		BE36082D23CF7D610020DAD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE36080323CF7D5F0020DAD0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE36080A23CF7D5F0020DAD0;
+			remoteInfo = AudigoChallengeMultiTrackPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BE36080B23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudigoChallengeMultiTrackPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE36081023CF7D5F0020DAD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BE36081223CF7D5F0020DAD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE36081523CF7D5F0020DAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE36081723CF7D610020DAD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE36081A23CF7D610020DAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE36081C23CF7D610020DAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE36082123CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudigoChallengeMultiTrackPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE36082523CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudigoChallengeMultiTrackPlayerTests.swift; sourceTree = "<group>"; };
+		BE36082723CF7D610020DAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE36082C23CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudigoChallengeMultiTrackPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE36083023CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudigoChallengeMultiTrackPlayerUITests.swift; sourceTree = "<group>"; };
+		BE36083223CF7D610020DAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE36080823CF7D5F0020DAD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE36081E23CF7D610020DAD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE36082923CF7D610020DAD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BE36080223CF7D5F0020DAD0 = {
+			isa = PBXGroup;
+			children = (
+				BE36080D23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer */,
+				BE36082423CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests */,
+				BE36082F23CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests */,
+				BE36080C23CF7D5F0020DAD0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE36080C23CF7D5F0020DAD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE36080B23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer.app */,
+				BE36082123CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.xctest */,
+				BE36082C23CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE36080D23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */,
+				BE36081023CF7D5F0020DAD0 /* SceneDelegate.swift */,
+				BE36081223CF7D5F0020DAD0 /* ViewController.swift */,
+				BE36081423CF7D5F0020DAD0 /* Main.storyboard */,
+				BE36081723CF7D610020DAD0 /* Assets.xcassets */,
+				BE36081923CF7D610020DAD0 /* LaunchScreen.storyboard */,
+				BE36081C23CF7D610020DAD0 /* Info.plist */,
+			);
+			path = AudigoChallengeMultiTrackPlayer;
+			sourceTree = "<group>";
+		};
+		BE36082423CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE36082523CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.swift */,
+				BE36082723CF7D610020DAD0 /* Info.plist */,
+			);
+			path = AudigoChallengeMultiTrackPlayerTests;
+			sourceTree = "<group>";
+		};
+		BE36082F23CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE36083023CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift */,
+				BE36083223CF7D610020DAD0 /* Info.plist */,
+			);
+			path = AudigoChallengeMultiTrackPlayerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE36080A23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE36083523CF7D610020DAD0 /* Build configuration list for PBXNativeTarget "AudigoChallengeMultiTrackPlayer" */;
+			buildPhases = (
+				BE36080723CF7D5F0020DAD0 /* Sources */,
+				BE36080823CF7D5F0020DAD0 /* Frameworks */,
+				BE36080923CF7D5F0020DAD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudigoChallengeMultiTrackPlayer;
+			productName = AudigoChallengeMultiTrackPlayer;
+			productReference = BE36080B23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE36082023CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE36083823CF7D610020DAD0 /* Build configuration list for PBXNativeTarget "AudigoChallengeMultiTrackPlayerTests" */;
+			buildPhases = (
+				BE36081D23CF7D610020DAD0 /* Sources */,
+				BE36081E23CF7D610020DAD0 /* Frameworks */,
+				BE36081F23CF7D610020DAD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE36082323CF7D610020DAD0 /* PBXTargetDependency */,
+			);
+			name = AudigoChallengeMultiTrackPlayerTests;
+			productName = AudigoChallengeMultiTrackPlayerTests;
+			productReference = BE36082123CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE36082B23CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE36083B23CF7D610020DAD0 /* Build configuration list for PBXNativeTarget "AudigoChallengeMultiTrackPlayerUITests" */;
+			buildPhases = (
+				BE36082823CF7D610020DAD0 /* Sources */,
+				BE36082923CF7D610020DAD0 /* Frameworks */,
+				BE36082A23CF7D610020DAD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE36082E23CF7D610020DAD0 /* PBXTargetDependency */,
+			);
+			name = AudigoChallengeMultiTrackPlayerUITests;
+			productName = AudigoChallengeMultiTrackPlayerUITests;
+			productReference = BE36082C23CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE36080323CF7D5F0020DAD0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Ken Murphy";
+				TargetAttributes = {
+					BE36080A23CF7D5F0020DAD0 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					BE36082023CF7D610020DAD0 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = BE36080A23CF7D5F0020DAD0;
+					};
+					BE36082B23CF7D610020DAD0 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = BE36080A23CF7D5F0020DAD0;
+					};
+				};
+			};
+			buildConfigurationList = BE36080623CF7D5F0020DAD0 /* Build configuration list for PBXProject "AudigoChallengeMultiTrackPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE36080223CF7D5F0020DAD0;
+			productRefGroup = BE36080C23CF7D5F0020DAD0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE36080A23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer */,
+				BE36082023CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests */,
+				BE36082B23CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE36080923CF7D5F0020DAD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE36081B23CF7D610020DAD0 /* LaunchScreen.storyboard in Resources */,
+				BE36081823CF7D610020DAD0 /* Assets.xcassets in Resources */,
+				BE36081623CF7D5F0020DAD0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE36081F23CF7D610020DAD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE36082A23CF7D610020DAD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE36080723CF7D5F0020DAD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE36081323CF7D5F0020DAD0 /* ViewController.swift in Sources */,
+				BE36080F23CF7D5F0020DAD0 /* AppDelegate.swift in Sources */,
+				BE36081123CF7D5F0020DAD0 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE36081D23CF7D610020DAD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE36082623CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE36082823CF7D610020DAD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE36083123CF7D610020DAD0 /* AudigoChallengeMultiTrackPlayerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE36082323CF7D610020DAD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE36080A23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer */;
+			targetProxy = BE36082223CF7D610020DAD0 /* PBXContainerItemProxy */;
+		};
+		BE36082E23CF7D610020DAD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE36080A23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer */;
+			targetProxy = BE36082D23CF7D610020DAD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE36081423CF7D5F0020DAD0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE36081523CF7D5F0020DAD0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE36081923CF7D610020DAD0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE36081A23CF7D610020DAD0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE36083323CF7D610020DAD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BE36083423CF7D610020DAD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE36083623CF7D610020DAD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4TE3E6DS;
+				INFOPLIST_FILE = AudigoChallengeMultiTrackPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Murphlab.AudigoChallengeMultiTrackPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE36083723CF7D610020DAD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4TE3E6DS;
+				INFOPLIST_FILE = AudigoChallengeMultiTrackPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Murphlab.AudigoChallengeMultiTrackPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BE36083923CF7D610020DAD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4TE3E6DS;
+				INFOPLIST_FILE = AudigoChallengeMultiTrackPlayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Murphlab.AudigoChallengeMultiTrackPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudigoChallengeMultiTrackPlayer.app/AudigoChallengeMultiTrackPlayer";
+			};
+			name = Debug;
+		};
+		BE36083A23CF7D610020DAD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4TE3E6DS;
+				INFOPLIST_FILE = AudigoChallengeMultiTrackPlayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Murphlab.AudigoChallengeMultiTrackPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudigoChallengeMultiTrackPlayer.app/AudigoChallengeMultiTrackPlayer";
+			};
+			name = Release;
+		};
+		BE36083C23CF7D610020DAD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4TE3E6DS;
+				INFOPLIST_FILE = AudigoChallengeMultiTrackPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Murphlab.AudigoChallengeMultiTrackPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AudigoChallengeMultiTrackPlayer;
+			};
+			name = Debug;
+		};
+		BE36083D23CF7D610020DAD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R4TE3E6DS;
+				INFOPLIST_FILE = AudigoChallengeMultiTrackPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Murphlab.AudigoChallengeMultiTrackPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AudigoChallengeMultiTrackPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE36080623CF7D5F0020DAD0 /* Build configuration list for PBXProject "AudigoChallengeMultiTrackPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE36083323CF7D610020DAD0 /* Debug */,
+				BE36083423CF7D610020DAD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE36083523CF7D610020DAD0 /* Build configuration list for PBXNativeTarget "AudigoChallengeMultiTrackPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE36083623CF7D610020DAD0 /* Debug */,
+				BE36083723CF7D610020DAD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE36083823CF7D610020DAD0 /* Build configuration list for PBXNativeTarget "AudigoChallengeMultiTrackPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE36083923CF7D610020DAD0 /* Debug */,
+				BE36083A23CF7D610020DAD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE36083B23CF7D610020DAD0 /* Build configuration list for PBXNativeTarget "AudigoChallengeMultiTrackPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE36083C23CF7D610020DAD0 /* Debug */,
+				BE36083D23CF7D610020DAD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE36080323CF7D5F0020DAD0 /* Project object */;
+}
