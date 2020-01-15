@@ -19,10 +19,19 @@ class AudigoChallengeMultiTrackPlayerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInitializeAudioController() {
+        let _ = AudioController()
     }
+    
+    func testLoadAudioProjects() {
+        let audioProjects = ProjectManager.loadAudioProjects()
+        assert(audioProjects != nil)
+        let drumsProject = audioProjects!["drums"]
+        assert(drumsProject != nil)
+        assert(drumsProject!.tracks.count == 2)
+    }
+    
+    
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

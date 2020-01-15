@@ -9,12 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let PROJECT_NAME = "drums"
+    
+    let audioController = AudioController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if let project = ProjectManager.loadAudioProjects()?[PROJECT_NAME] {
+            
+            audioController.setAudioProject(project)
+            audioController.play()
+            
+        } else {
+            print("ERROR: Could not load project with name: \(PROJECT_NAME)")
+        }
     }
 
+    // MARK: - Private
 
 }
 
