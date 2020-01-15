@@ -6,8 +6,8 @@
 	<dict>
 		<key>tracks</key>
 		<array>
-			<string>Overheads.wav</string>
-			<string>Kick.wav</string>
+			<string>Overheads</string>
+			<string>Kick</string>
 		</array>
 	</dict>
 </dict>
