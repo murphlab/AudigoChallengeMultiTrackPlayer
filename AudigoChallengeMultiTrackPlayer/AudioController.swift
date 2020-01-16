@@ -84,6 +84,11 @@ class AudioController: NSObject {
         return trackContainers[index]
     }
     
+    public func effectController(forIndex index: Int) -> EffectController? {
+        if index >= effectContainers.count { return nil }
+        return effectContainers[index]
+    }
+    
     // MARK: - Private
     
     private var audioEngine = AVAudioEngine()
@@ -196,9 +201,20 @@ fileprivate class TrackContainer: TrackController {
 
 // MARK: - Effect Container
 
-fileprivate class EffectContainer {
+fileprivate class EffectContainer: EffectController {
     // currently only supports reverb:
     var effect: AVAudioUnitReverb!
+    
+    // conform to EffectController:
+    
+    var wetDryMix: Float {
+        get {
+            return effect.wetDryMix
+        }
+        set {
+            effect.wetDryMix = newValue
+        }
+    }
 }
 
 // MARK: - TrackController protocol definition
@@ -206,4 +222,10 @@ fileprivate class EffectContainer {
 public protocol TrackController: class {
     var volume: Float { get set }
     var mute: Bool { get set }
+}
+
+// MARK: EffectController protocol definition
+
+public protocol EffectController: class {
+    var wetDryMix: Float { get set }
 }
