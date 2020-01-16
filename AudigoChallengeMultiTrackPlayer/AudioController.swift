@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-/// Manages all of our audio playback functions
+/// Manages all the tracks, effects, routing and playback functions
 class AudioController: NSObject {
     
     override init() {
