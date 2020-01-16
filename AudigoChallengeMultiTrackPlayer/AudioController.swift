@@ -58,7 +58,7 @@ class AudioController: NSObject {
             
             var startTime: AVAudioTime? = nil
             
-            for player in playerNodes {
+            for player in trackContainers {
                 
                 if startTime == nil {
                     let delayTime = 0.1
@@ -75,15 +75,20 @@ class AudioController: NSObject {
     }
     
     public func stop() {
-        for player in playerNodes {  player.playerNode.stop() }
+        for player in trackContainers {  player.playerNode.stop() }
         audioEngine.stop()
+    }
+    
+    public func trackController(forIndex index: Int) -> TrackController? {
+        if index >= trackContainers.count { return nil }
+        return trackContainers[index]
     }
     
     // MARK: - Private
     
     private var audioEngine = AVAudioEngine()
     
-    private var playerNodes = [TrackContainer]()
+    private var trackContainers = [TrackContainer]()
     
     private func setUpNodes() {
         guard let audioProject = audioProject else {
@@ -108,7 +113,7 @@ class AudioController: NSObject {
                 // TODO: more elegant error handling
                 fatalError("Error reading audio file \(trackFile) into buffer: \(error)")
             }
-            playerNodes.append(player)
+            trackContainers.append(player)
             audioEngine.attach(player.playerNode)
             audioEngine.attach(player.mixerNode)
             audioEngine.connect(player.playerNode,
@@ -123,11 +128,11 @@ class AudioController: NSObject {
     
     /// Detach current player nodes from the engine and clear the playerNodes array
     private func clearPlayerNodes() {
-        for player in playerNodes {
+        for player in trackContainers {
             audioEngine.detach(player.playerNode)
             audioEngine.detach(player.mixerNode)
         }
-        playerNodes = [TrackContainer]()
+        trackContainers = [TrackContainer]()
     }
 }
 
