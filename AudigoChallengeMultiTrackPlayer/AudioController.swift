@@ -39,7 +39,7 @@ class AudioController: NSObject {
     
     // MARK: - Public
     
-    /// current audio project, publically readonly. use setAudioProject to set
+    /// current audio project, publicly readonly. use setAudioProject to set
     private(set) public var audioProject: AudioProject?
     
     
@@ -58,7 +58,7 @@ class AudioController: NSObject {
             
             var startTime: AVAudioTime? = nil
             
-            for player in playerNodes {
+            for player in trackContainers {
                 
                 if startTime == nil {
                     let delayTime = 0.1
@@ -75,15 +75,20 @@ class AudioController: NSObject {
     }
     
     public func stop() {
-        for player in playerNodes {  player.playerNode.stop() }
+        for player in trackContainers {  player.playerNode.stop() }
         audioEngine.stop()
+    }
+    
+    public func trackController(forIndex index: Int) -> TrackController? {
+        if index >= trackContainers.count { return nil }
+        return trackContainers[index]
     }
     
     // MARK: - Private
     
     private var audioEngine = AVAudioEngine()
     
-    private var playerNodes = [PlayerNodeWithBuffer]()
+    private var trackContainers = [TrackContainer]()
     
     private func setUpNodes() {
         guard let audioProject = audioProject else {
@@ -98,36 +103,65 @@ class AudioController: NSObject {
                 fatalError("Could not obtail url for track: \(trackFile)")
             }
             //print("trackURL: \(String(describing: trackURL))")
-            let playerWithBuffer = PlayerNodeWithBuffer()
+            let player = TrackContainer()
             // TODO: more elegant error handling:
             let audioFile = try! AVAudioFile(forReading: trackURL)
-            playerWithBuffer.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
+            player.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
             do {
-                try audioFile.read(into: playerWithBuffer.buffer)
+                try audioFile.read(into: player.buffer)
             } catch {
                 // TODO: more elegant error handling
                 fatalError("Error reading audio file \(trackFile) into buffer: \(error)")
             }
-            playerNodes.append(playerWithBuffer)
-            audioEngine.attach(playerWithBuffer.playerNode)
-            audioEngine.connect(playerWithBuffer.playerNode,
+            trackContainers.append(player)
+            audioEngine.attach(player.playerNode)
+            audioEngine.attach(player.mixerNode)
+            audioEngine.connect(player.playerNode,
+                                to: player.mixerNode,
+                                format: player.buffer.format)
+            audioEngine.connect(player.mixerNode,
                                 to: audioEngine.mainMixerNode,
-                                format: playerWithBuffer.buffer.format)
+                                format: player.buffer.format)
         }
         
     }
     
     /// Detach current player nodes from the engine and clear the playerNodes array
     private func clearPlayerNodes() {
-        for playerNode in playerNodes {
-            audioEngine.detach(playerNode.playerNode)
+        for player in trackContainers {
+            audioEngine.detach(player.playerNode)
+            audioEngine.detach(player.mixerNode)
         }
-        playerNodes = [PlayerNodeWithBuffer]()
+        trackContainers = [TrackContainer]()
     }
 }
 
-/// Container for playerNode + associated buffer
-fileprivate class PlayerNodeWithBuffer {
+// MARK - Track Container
+
+/// This is a fileprivate class that conforms to the public TrackController protocol. Used internally to manage AVAudioNodes per-track, exposed publically to provide volume, mute, (etc?)
+fileprivate class TrackContainer: TrackController {
     var playerNode = AVAudioPlayerNode()
     var buffer: AVAudioPCMBuffer!
+    var mixerNode = AVAudioMixerNode()
+    
+    // conform to TrackController:
+    
+    var volume: Float = 1 {
+        didSet {
+            if !mute { mixerNode.volume = volume }
+        }
+    }
+    
+    var mute: Bool = false {
+        didSet {
+            mixerNode.volume = mute ? 0 : volume
+        }
+    }
+}
+
+// MARK: - TrackController protocol definition
+
+public protocol TrackController: class {
+    var volume: Float { get set }
+    var mute: Bool { get set }
 }

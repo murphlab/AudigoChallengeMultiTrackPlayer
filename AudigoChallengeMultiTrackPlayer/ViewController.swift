@@ -61,26 +61,30 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackCell
         cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
+        let trackController = audioController.trackController(forIndex: indexPath.row)!
+        cell.volumeSlider.value = trackController.volume
         cell.delegate = self
         return cell
     }
 }
 
-// MARK: - Track Cell Delegate
+// MARK: - Track Cell Delegate Implementation
 
 extension ViewController: TrackCellDelegate {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton) {
         let idx = tableView.indexPath(for: trackCell)!.row
-        let name = audioController.audioProject!.tracks[idx]
-        print("MUTE BUTTON TAPPED FOR TRACK INDEX: \(idx) NAME: \(name)")
+        let trackController = audioController.trackController(forIndex: idx)!
+        trackController.mute = muteButton.isSelected
     }
     
-    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider: UISlider) {
+    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider) {
         let idx = tableView.indexPath(for: trackCell)!.row
-        let name = audioController.audioProject!.tracks[idx]
-        print("VOLUME SLIDER FOR TRACK INDEX: \(idx) NAME: \(name)")
+        let trackController = audioController.trackController(forIndex: idx)!
+        trackController.volume = slider.value
     }
 }
+
+// MARK: - Track Cell Class
 
 class TrackCell: UITableViewCell {
     @IBOutlet weak var trackNameLabel: UILabel!
@@ -90,6 +94,7 @@ class TrackCell: UITableViewCell {
     weak var delegate: TrackCellDelegate?
     
     @IBAction func muteButtonTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         delegate?.trackCell(self, didTapMuteButton: sender)
     }
     
@@ -98,7 +103,9 @@ class TrackCell: UITableViewCell {
     }
 }
 
+// MARK: - Track Cell Delegate Protocol Definition
+
 protocol TrackCellDelegate: class {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton)
-    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider: UISlider)
+    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider)
 }
