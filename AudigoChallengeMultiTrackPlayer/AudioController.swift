@@ -109,7 +109,8 @@ class AudioController: NSObject {
             audioEngine.detach(player.playerNode)
             audioEngine.detach(player.mixerNode)
         }
-        trackContainers = [TrackContainer]()
+        trackContainers.removeAll()
+        effectContainers.removeAll()
     }
     
     private func setUpTracks() {
