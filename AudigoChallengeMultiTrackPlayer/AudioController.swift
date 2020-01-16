@@ -141,6 +141,6 @@ fileprivate class PlayerNodeContainer {
 // MARK: - TrackController protocol definition
 
 public protocol TrackController: class {
-    var volume: Double { get <#set#> }
+    var volume: Double { get set }
     var mute: Bool { get set }
 }
