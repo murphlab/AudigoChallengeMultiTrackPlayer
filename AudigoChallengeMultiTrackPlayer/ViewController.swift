@@ -66,17 +66,26 @@ extension ViewController: UITableViewDataSource {
         if section == 0 {
             return audioController.audioProject?.tracks.count ?? 0
         } else {
-            return 0
+            return audioController.audioProject?.effects.count ?? 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackCell
-        cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
-        let trackController = audioController.trackController(forIndex: indexPath.row)!
-        cell.volumeSlider.value = trackController.volume
-        cell.delegate = self
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackCell
+            cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
+            let trackController = audioController.trackController(forIndex: indexPath.row)!
+            cell.volumeSlider.value = trackController.volume
+            cell.delegate = self
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EffectCell", for: indexPath) as! EffectCell
+            //cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
+            //let trackController = audioController.trackController(forIndex: indexPath.row)!
+            //cell.volumeSlider.value = trackController.volume
+            //cell.delegate = self
+            return cell
+        }
     }
 }
 
@@ -120,4 +129,14 @@ class TrackCell: UITableViewCell {
 protocol TrackCellDelegate: class {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton)
     func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider)
+}
+
+// MARK: - Effect Cell Class
+
+class EffectCell: UITableViewCell {
+    @IBOutlet weak var effectNameLabel: UILabel!
+    @IBOutlet weak var mixSlider: UISlider!
+    
+    @IBAction func mixSliderChanged(_ sender: UISlider) {
+    }
 }
