@@ -132,15 +132,30 @@ class AudioController: NSObject {
 }
 
 /// Container for playerNode + associated stuff
-fileprivate class TrackContainer {
+fileprivate class TrackContainer: TrackController {
     var playerNode = AVAudioPlayerNode()
     var buffer: AVAudioPCMBuffer!
     var mixerNode = AVAudioMixerNode()
+    
+    // conform to TrackController:
+    
+    var volume: Float = 1 {
+        didSet {
+            mute = false
+            mixerNode.volume = volume
+        }
+    }
+    
+    var mute: Bool = false {
+        didSet {
+            mixerNode.volume = mute ? 0 : volume
+        }
+    }
 }
 
 // MARK: - TrackController protocol definition
 
 public protocol TrackController: class {
-    var volume: Double { get set }
+    var volume: Float { get set }
     var mute: Bool { get set }
 }
