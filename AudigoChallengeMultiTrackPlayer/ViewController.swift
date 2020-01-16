@@ -61,6 +61,8 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackCell
         cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
+        let trackController = audioController.trackController(forIndex: indexPath.row)!
+        cell.volumeSlider.value = trackController.volume
         cell.delegate = self
         return cell
     }
@@ -75,10 +77,12 @@ extension ViewController: TrackCellDelegate {
         print("MUTE BUTTON TAPPED FOR TRACK INDEX: \(idx) NAME: \(name)")
     }
     
-    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider: UISlider) {
+    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider) {
         let idx = tableView.indexPath(for: trackCell)!.row
         let name = audioController.audioProject!.tracks[idx]
         print("VOLUME SLIDER FOR TRACK INDEX: \(idx) NAME: \(name)")
+        let trackController = audioController.trackController(forIndex: idx)!
+        trackController.volume = slider.value
     }
 }
 
@@ -104,5 +108,5 @@ class TrackCell: UITableViewCell {
 
 protocol TrackCellDelegate: class {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton)
-    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider: UISlider)
+    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider)
 }
