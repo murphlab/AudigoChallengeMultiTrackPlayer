@@ -41,10 +41,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" id="ztG-KF-32p" customClass="TrackCell" customModule="AudigoChallengeMultiTrackPlayer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ztG-KF-32p" id="6gy-sh-Ldb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1X-Lk-EV1">
@@ -54,7 +54,7 @@
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-jp-OGV">
-                                                    <rect key="frame" x="20" y="11.5" width="90" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="90" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Ryl-sy-sJh"/>
                                                     </constraints>
@@ -75,8 +75,10 @@
                                                 <constraint firstItem="x1X-Lk-EV1" firstAttribute="trailing" secondItem="6gy-sh-Ldb" secondAttribute="trailingMargin" id="AjL-0U-qvn"/>
                                                 <constraint firstItem="4sZ-7M-4hZ" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="CVK-Ny-rrk"/>
                                                 <constraint firstItem="nnA-jp-OGV" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="T1q-NJ-Cfh"/>
+                                                <constraint firstItem="nnA-jp-OGV" firstAttribute="top" secondItem="6gy-sh-Ldb" secondAttribute="topMargin" constant="0.5" id="VaS-6V-tDq"/>
                                                 <constraint firstItem="x1X-Lk-EV1" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="W8n-j7-N6L"/>
                                                 <constraint firstItem="4sZ-7M-4hZ" firstAttribute="leading" secondItem="nnA-jp-OGV" secondAttribute="trailing" constant="4" id="Z7k-iW-5uG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nnA-jp-OGV" secondAttribute="bottom" constant="0.5" id="ffx-DF-RXU"/>
                                                 <constraint firstItem="x1X-Lk-EV1" firstAttribute="leading" secondItem="4sZ-7M-4hZ" secondAttribute="trailing" constant="10" id="g8v-5A-Q89"/>
                                                 <constraint firstItem="nnA-jp-OGV" firstAttribute="leading" secondItem="6gy-sh-Ldb" secondAttribute="leadingMargin" id="vyS-u9-sFE"/>
                                             </constraints>
@@ -88,10 +90,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EffectCell" id="eDI-R8-iXL" customClass="TrackCell" customModule="AudigoChallengeMultiTrackPlayer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eDI-R8-iXL" id="4u6-OG-8Lh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n0u-nD-KNK">
@@ -101,7 +103,7 @@
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="43H-ya-Bdh">
-                                                    <rect key="frame" x="20" y="11.5" width="90" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="90" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="3lk-RN-Cvl"/>
                                                     </constraints>
@@ -110,13 +112,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZh-ho-TxM">
-                                                    <rect key="frame" x="120" y="11.5" width="27" height="20.5"/>
+                                                    <rect key="frame" x="120" y="12" width="27" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mf-FT-e3h">
-                                                    <rect key="frame" x="363.5" y="11.5" width="30.5" height="20.5"/>
+                                                    <rect key="frame" x="363.5" y="12" width="30.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -126,6 +128,8 @@
                                                 <constraint firstItem="DZh-ho-TxM" firstAttribute="leading" secondItem="43H-ya-Bdh" secondAttribute="trailing" constant="10" id="64m-5m-AQ8"/>
                                                 <constraint firstItem="7Mf-FT-e3h" firstAttribute="leading" secondItem="n0u-nD-KNK" secondAttribute="trailing" constant="6" id="8tG-b8-ktZ"/>
                                                 <constraint firstItem="7Mf-FT-e3h" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="9gU-EC-vPt"/>
+                                                <constraint firstItem="43H-ya-Bdh" firstAttribute="top" secondItem="4u6-OG-8Lh" secondAttribute="topMargin" constant="0.5" id="T0r-L9-TLa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="43H-ya-Bdh" secondAttribute="bottom" constant="0.5" id="hBO-TF-hrA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="7Mf-FT-e3h" secondAttribute="trailing" id="itt-1l-CjI"/>
                                                 <constraint firstItem="n0u-nD-KNK" firstAttribute="leading" secondItem="DZh-ho-TxM" secondAttribute="trailing" constant="6" id="m61-Pt-i9l"/>
                                                 <constraint firstItem="DZh-ho-TxM" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="mSW-0G-vZ2"/>
