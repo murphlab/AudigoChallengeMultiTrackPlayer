@@ -11,6 +11,7 @@ import Foundation
 /// Single project
 public struct AudioProject: Codable {
     public var tracks: [String]
+    public var effects: [String]
 }
 
 /// Collection of projects

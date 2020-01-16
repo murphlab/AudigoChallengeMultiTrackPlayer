@@ -9,6 +9,10 @@
 			<string>Overheads</string>
 			<string>Kick</string>
 		</array>
+		<key>effects</key>
+		<array>
+			<string>reverb</string>
+		</array>
 	</dict>
 </dict>
 </plist>
