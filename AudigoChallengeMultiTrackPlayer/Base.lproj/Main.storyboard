@@ -58,7 +58,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="Ryl-sy-sJh"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -85,6 +85,58 @@
                                             <outlet property="muteButton" destination="4sZ-7M-4hZ" id="U8g-cY-pqh"/>
                                             <outlet property="trackNameLabel" destination="nnA-jp-OGV" id="0s4-Wg-HMa"/>
                                             <outlet property="volumeSlider" destination="x1X-Lk-EV1" id="1gP-3V-8ft"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EffectCell" id="eDI-R8-iXL" customClass="TrackCell" customModule="AudigoChallengeMultiTrackPlayer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eDI-R8-iXL" id="4u6-OG-8Lh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n0u-nD-KNK">
+                                                    <rect key="frame" x="121" y="7" width="238.5" height="31"/>
+                                                    <connections>
+                                                        <action selector="volumeSliderChanged:" destination="eDI-R8-iXL" eventType="valueChanged" id="wTd-tn-eow"/>
+                                                    </connections>
+                                                </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="43H-ya-Bdh">
+                                                    <rect key="frame" x="20" y="11.5" width="60" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="3lk-RN-Cvl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZh-ho-TxM">
+                                                    <rect key="frame" x="90" y="11.5" width="27" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mf-FT-e3h">
+                                                    <rect key="frame" x="363.5" y="11.5" width="30.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DZh-ho-TxM" firstAttribute="leading" secondItem="43H-ya-Bdh" secondAttribute="trailing" constant="10" id="64m-5m-AQ8"/>
+                                                <constraint firstItem="7Mf-FT-e3h" firstAttribute="leading" secondItem="n0u-nD-KNK" secondAttribute="trailing" constant="6" id="8tG-b8-ktZ"/>
+                                                <constraint firstItem="7Mf-FT-e3h" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="9gU-EC-vPt"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7Mf-FT-e3h" secondAttribute="trailing" id="itt-1l-CjI"/>
+                                                <constraint firstItem="n0u-nD-KNK" firstAttribute="leading" secondItem="DZh-ho-TxM" secondAttribute="trailing" constant="6" id="m61-Pt-i9l"/>
+                                                <constraint firstItem="DZh-ho-TxM" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="mSW-0G-vZ2"/>
+                                                <constraint firstItem="43H-ya-Bdh" firstAttribute="leading" secondItem="4u6-OG-8Lh" secondAttribute="leadingMargin" id="nYS-1Q-oKl"/>
+                                                <constraint firstItem="43H-ya-Bdh" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="ncf-4V-ACl"/>
+                                                <constraint firstItem="n0u-nD-KNK" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="u1e-4d-R4h"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="trackNameLabel" destination="43H-ya-Bdh" id="LfD-qs-mWx"/>
+                                            <outlet property="volumeSlider" destination="n0u-nD-KNK" id="iSW-8Z-WoR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
