@@ -84,19 +84,39 @@ class AudioController: NSObject {
         return trackContainers[index]
     }
     
+    public func effectController(forIndex index: Int) -> EffectController? {
+        if index >= effectContainers.count { return nil }
+        return effectContainers[index]
+    }
+    
     // MARK: - Private
     
     private var audioEngine = AVAudioEngine()
-    
+    private var tracksSubmixerNode = AVAudioMixerNode()
+    private var effectsSubmixerNode = AVAudioMixerNode()
     private var trackContainers = [TrackContainer]()
-    
+    private var effectContainers = [EffectContainer]()
+        
     private func setUpNodes() {
+        clearPlayerNodes()
+        setUpTracks()
+        setUpEffects()
+    }
+
+    /// Detach current player nodes from the engine and clear the playerNodes array
+    private func clearPlayerNodes() {
+        for player in trackContainers {
+            audioEngine.detach(player.playerNode)
+            audioEngine.detach(player.mixerNode)
+        }
+        trackContainers = [TrackContainer]()
+    }
+    
+    private func setUpTracks() {
         guard let audioProject = audioProject else {
             return
         }
-        
-        clearPlayerNodes()
-        
+        audioEngine.attach(tracksSubmixerNode)
         for trackFile in audioProject.tracks {
             guard let trackURL = Bundle.main.url(forResource: trackFile, withExtension: "wav") else {
                 // TODO: more elegant error handling
@@ -120,23 +140,43 @@ class AudioController: NSObject {
                                 to: player.mixerNode,
                                 format: player.buffer.format)
             audioEngine.connect(player.mixerNode,
-                                to: audioEngine.mainMixerNode,
+                                to: tracksSubmixerNode,
                                 format: player.buffer.format)
         }
-        
     }
     
-    /// Detach current player nodes from the engine and clear the playerNodes array
-    private func clearPlayerNodes() {
-        for player in trackContainers {
-            audioEngine.detach(player.playerNode)
-            audioEngine.detach(player.mixerNode)
+    private func setUpEffects() {
+        guard let audioProject = audioProject else {
+            return
         }
-        trackContainers = [TrackContainer]()
+        audioEngine.attach(effectsSubmixerNode)
+        // for now just short circuit:
+        //audioEngine.connect(tracksSubmixerNode, to: effectsSubmixerNode, format: tracksSubmixerNode.inputFormat(forBus: 0))
+        
+        for effect in audioProject.effects {
+            
+            // This chunk is a little contrived at this point because we only support reverb,
+            // but consider it a stub for eventual support of other effects:
+            if effect.lowercased() == "reverb" {
+                let effectContainer = EffectContainer()
+                effectContainer.effect = AVAudioUnitReverb()
+                effectContainers.append(effectContainer)
+                audioEngine.attach(effectContainer.effect)
+                audioEngine.connect(tracksSubmixerNode, to: effectContainer.effect, format: tracksSubmixerNode.inputFormat(forBus: 0))
+                audioEngine.connect(effectContainer.effect, to: effectsSubmixerNode, format: effectContainer.effect.inputFormat(forBus: 0))
+            } else {
+                print("WARNING: Unsupporte effect: \(effect)")
+            }
+            
+            
+
+        }
+        
+        audioEngine.connect(effectsSubmixerNode, to: audioEngine.mainMixerNode, format: effectsSubmixerNode.inputFormat(forBus: 0))
     }
 }
 
-// MARK - Track Container
+// MARK: - Track Container
 
 /// This is a fileprivate class that conforms to the public TrackController protocol. Used internally to manage AVAudioNodes per-track, exposed publically to provide volume, mute, (etc?)
 fileprivate class TrackContainer: TrackController {
@@ -159,9 +199,33 @@ fileprivate class TrackContainer: TrackController {
     }
 }
 
+// MARK: - Effect Container
+
+fileprivate class EffectContainer: EffectController {
+    // currently only supports reverb:
+    var effect: AVAudioUnitReverb!
+    
+    // conform to EffectController:
+    
+    var wetDryMix: Float {
+        get {
+            return effect.wetDryMix
+        }
+        set {
+            effect.wetDryMix = newValue
+        }
+    }
+}
+
 // MARK: - TrackController protocol definition
 
 public protocol TrackController: class {
     var volume: Float { get set }
     var mute: Bool { get set }
+}
+
+// MARK: EffectController protocol definition
+
+public protocol EffectController: class {
+    var wetDryMix: Float { get set }
 }
