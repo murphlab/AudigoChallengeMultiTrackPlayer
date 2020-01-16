@@ -38,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="126" width="414" height="750"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" id="ztG-KF-32p">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" id="ztG-KF-32p" customClass="TrackCell" customModule="AudigoChallengeMultiTrackPlayer" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ztG-KF-32p" id="6gy-sh-Ldb">
@@ -73,6 +73,11 @@
                                                 <constraint firstItem="nnA-jp-OGV" firstAttribute="leading" secondItem="6gy-sh-Ldb" secondAttribute="leadingMargin" id="vyS-u9-sFE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="muteButton" destination="4sZ-7M-4hZ" id="U8g-cY-pqh"/>
+                                            <outlet property="trackNameLabel" destination="nnA-jp-OGV" id="0s4-Wg-HMa"/>
+                                            <outlet property="volumeSlider" destination="x1X-Lk-EV1" id="1gP-3V-8ft"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

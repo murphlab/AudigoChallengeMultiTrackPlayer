@@ -63,3 +63,9 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
+
+class TrackCell: UITableViewCell {
+    @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var muteButton: UIButton!
+    @IBOutlet weak var volumeSlider: UISlider!
+}
