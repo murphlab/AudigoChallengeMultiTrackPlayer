@@ -74,13 +74,12 @@ extension ViewController: TrackCellDelegate {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton) {
         let idx = tableView.indexPath(for: trackCell)!.row
         let name = audioController.audioProject!.tracks[idx]
-        print("MUTE BUTTON TAPPED FOR TRACK INDEX: \(idx) NAME: \(name)")
+        
     }
     
     func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider) {
         let idx = tableView.indexPath(for: trackCell)!.row
         let name = audioController.audioProject!.tracks[idx]
-        print("VOLUME SLIDER FOR TRACK INDEX: \(idx) NAME: \(name)")
         let trackController = audioController.trackController(forIndex: idx)!
         trackController.volume = slider.value
     }
