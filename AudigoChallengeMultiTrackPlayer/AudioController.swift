@@ -131,7 +131,9 @@ class AudioController: NSObject {
     }
 }
 
-/// Container for playerNode + associated stuff
+// MARK - Track Container
+
+/// This is a fileprivate class that conforms to the public TrackController protocol. Used internally to manage AVAudioNodes per-track, exposed publically to provide volume, mute, (etc?)
 fileprivate class TrackContainer: TrackController {
     var playerNode = AVAudioPlayerNode()
     var buffer: AVAudioPCMBuffer!
