@@ -87,15 +87,14 @@ class AudioController: NSObject {
     // MARK: - Private
     
     private var audioEngine = AVAudioEngine()
-    
+    private var tracksSubmixerNode = AVAudioMixerNode()
+    private var effectsSubmixerNode = AVAudioMixerNode()
     private var trackContainers = [TrackContainer]()
-    
+        
     private func setUpNodes() {
-        
         clearPlayerNodes()
-        
         setUpTracks()
-        
+        setUpEffects()
     }
 
     /// Detach current player nodes from the engine and clear the playerNodes array
@@ -111,6 +110,7 @@ class AudioController: NSObject {
         guard let audioProject = audioProject else {
             return
         }
+        audioEngine.attach(tracksSubmixerNode)
         for trackFile in audioProject.tracks {
             guard let trackURL = Bundle.main.url(forResource: trackFile, withExtension: "wav") else {
                 // TODO: more elegant error handling
@@ -134,9 +134,16 @@ class AudioController: NSObject {
                                 to: player.mixerNode,
                                 format: player.buffer.format)
             audioEngine.connect(player.mixerNode,
-                                to: audioEngine.mainMixerNode,
+                                to: tracksSubmixerNode,
                                 format: player.buffer.format)
         }
+    }
+    
+    private func setUpEffects() {
+        audioEngine.attach(effectsSubmixerNode)
+        // for now just short circuit:
+        audioEngine.connect(tracksSubmixerNode, to: effectsSubmixerNode, format: tracksSubmixerNode.inputFormat(forBus: 0))
+        audioEngine.connect(effectsSubmixerNode, to: audioEngine.mainMixerNode, format: effectsSubmixerNode.inputFormat(forBus: 0))
     }
 }
 
