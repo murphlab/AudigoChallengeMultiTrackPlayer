@@ -109,6 +109,9 @@ class AudioController: NSObject {
             audioEngine.detach(player.playerNode)
             audioEngine.detach(player.mixerNode)
         }
+        for effectContainer in effectContainers {
+            audioEngine.detach(effectContainer.effect)
+        }
         trackContainers.removeAll()
         effectContainers.removeAll()
     }
