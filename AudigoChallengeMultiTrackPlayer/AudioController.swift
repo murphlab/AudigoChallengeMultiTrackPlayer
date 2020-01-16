@@ -98,29 +98,34 @@ class AudioController: NSObject {
                 fatalError("Could not obtail url for track: \(trackFile)")
             }
             //print("trackURL: \(String(describing: trackURL))")
-            let playerWithBuffer = PlayerNodeContainer()
+            let player = PlayerNodeContainer()
             // TODO: more elegant error handling:
             let audioFile = try! AVAudioFile(forReading: trackURL)
-            playerWithBuffer.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
+            player.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
             do {
-                try audioFile.read(into: playerWithBuffer.buffer)
+                try audioFile.read(into: player.buffer)
             } catch {
                 // TODO: more elegant error handling
                 fatalError("Error reading audio file \(trackFile) into buffer: \(error)")
             }
-            playerNodes.append(playerWithBuffer)
-            audioEngine.attach(playerWithBuffer.playerNode)
-            audioEngine.connect(playerWithBuffer.playerNode,
+            playerNodes.append(player)
+            audioEngine.attach(player.playerNode)
+            audioEngine.attach(player.mixerNode)
+            audioEngine.connect(player.playerNode,
+                                to: player.mixerNode,
+                                format: player.buffer.format)
+            audioEngine.connect(player.mixerNode,
                                 to: audioEngine.mainMixerNode,
-                                format: playerWithBuffer.buffer.format)
+                                format: player.buffer.format)
         }
         
     }
     
     /// Detach current player nodes from the engine and clear the playerNodes array
     private func clearPlayerNodes() {
-        for playerNode in playerNodes {
-            audioEngine.detach(playerNode.playerNode)
+        for player in playerNodes {
+            audioEngine.detach(player.playerNode)
+            audioEngine.detach(player.mixerNode)
         }
         playerNodes = [PlayerNodeContainer]()
     }
@@ -130,4 +135,5 @@ class AudioController: NSObject {
 fileprivate class PlayerNodeContainer {
     var playerNode = AVAudioPlayerNode()
     var buffer: AVAudioPCMBuffer!
+    var mixerNode = AVAudioMixerNode()
 }
