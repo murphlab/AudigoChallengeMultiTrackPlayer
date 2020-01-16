@@ -80,10 +80,10 @@ extension ViewController: UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EffectCell", for: indexPath) as! EffectCell
-            //cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
-            //let trackController = audioController.trackController(forIndex: indexPath.row)!
-            //cell.volumeSlider.value = trackController.volume
-            //cell.delegate = self
+            cell.effectNameLabel.text = audioController.audioProject?.effects[indexPath.row]
+            let effectController = audioController.effectController(forIndex: indexPath.row)!
+            cell.mixSlider.value = effectController.wetDryMix / 100
+            cell.delegate = self
             return cell
         }
     }
@@ -102,6 +102,16 @@ extension ViewController: TrackCellDelegate {
         let idx = tableView.indexPath(for: trackCell)!.row
         let trackController = audioController.trackController(forIndex: idx)!
         trackController.volume = slider.value
+    }
+}
+
+// MARK: - Effect Cell Delegate Implementation
+
+extension ViewController: EffectCellDelegate {
+    func effectCell(_ effectCell: EffectCell, didChangeMixSlider slider: UISlider) {
+        let idx = tableView.indexPath(for: effectCell)!.row
+        let effectController = audioController.effectController(forIndex: idx)!
+        effectController.wetDryMix = slider.value * 100
     }
 }
 
@@ -137,6 +147,16 @@ class EffectCell: UITableViewCell {
     @IBOutlet weak var effectNameLabel: UILabel!
     @IBOutlet weak var mixSlider: UISlider!
     
+    weak var delegate: EffectCellDelegate?
+    
     @IBAction func mixSliderChanged(_ sender: UISlider) {
+        delegate?.effectCell(self, didChangeMixSlider: sender)
     }
 }
+
+// MARK: - Effect Cell Delegate Protocol Definition
+
+protocol EffectCellDelegate: class {
+    func effectCell(_ effectCell: EffectCell, didChangeMixSlider slider: UISlider)
+}
+
