@@ -39,7 +39,7 @@ class AudioController: NSObject {
     
     // MARK: - Public
     
-    /// current audio project, publically readonly. use setAudioProject to set
+    /// current audio project, publicly readonly. use setAudioProject to set
     private(set) public var audioProject: AudioProject?
     
     
