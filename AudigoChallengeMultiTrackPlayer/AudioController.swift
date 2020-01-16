@@ -157,7 +157,7 @@ class AudioController: NSObject {
             
             // This chunk is a little contrived at this point because we only support reverb,
             // but consider it a stub for eventual support of other effects:
-            if effect == "reverb" {
+            if effect.lowercased() == "reverb" {
                 let effectContainer = EffectContainer()
                 effectContainer.effect = AVAudioUnitReverb()
                 effectContainers.append(effectContainer)
