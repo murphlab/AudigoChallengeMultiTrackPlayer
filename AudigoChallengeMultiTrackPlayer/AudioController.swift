@@ -90,6 +90,7 @@ class AudioController: NSObject {
     private var tracksSubmixerNode = AVAudioMixerNode()
     private var effectsSubmixerNode = AVAudioMixerNode()
     private var trackContainers = [TrackContainer]()
+    private var effectContainers = [EffectContainer]()
         
     private func setUpNodes() {
         clearPlayerNodes()
@@ -140,14 +141,37 @@ class AudioController: NSObject {
     }
     
     private func setUpEffects() {
+        guard let audioProject = audioProject else {
+            return
+        }
         audioEngine.attach(effectsSubmixerNode)
         // for now just short circuit:
-        audioEngine.connect(tracksSubmixerNode, to: effectsSubmixerNode, format: tracksSubmixerNode.inputFormat(forBus: 0))
+        //audioEngine.connect(tracksSubmixerNode, to: effectsSubmixerNode, format: tracksSubmixerNode.inputFormat(forBus: 0))
+        
+        for effect in audioProject.effects {
+            
+            // This chunk is a little contrived at this point because we only support reverb,
+            // but consider it a stub for eventual support of other effects:
+            if effect == "reverb" {
+                let effectContainer = EffectContainer()
+                effectContainer.effect = AVAudioUnitReverb()
+                effectContainers.append(effectContainer)
+                audioEngine.attach(effectContainer.effect)
+                audioEngine.connect(tracksSubmixerNode, to: effectContainer.effect, format: tracksSubmixerNode.inputFormat(forBus: 0))
+                audioEngine.connect(effectContainer.effect, to: effectsSubmixerNode, format: effectContainer.effect.inputFormat(forBus: 0))
+            } else {
+                print("WARNING: Unsupporte effect: \(effect)")
+            }
+            
+            
+
+        }
+        
         audioEngine.connect(effectsSubmixerNode, to: audioEngine.mainMixerNode, format: effectsSubmixerNode.inputFormat(forBus: 0))
     }
 }
 
-// MARK - Track Container
+// MARK: - Track Container
 
 /// This is a fileprivate class that conforms to the public TrackController protocol. Used internally to manage AVAudioNodes per-track, exposed publically to provide volume, mute, (etc?)
 fileprivate class TrackContainer: TrackController {
@@ -168,6 +192,13 @@ fileprivate class TrackContainer: TrackController {
             mixerNode.volume = mute ? 0 : volume
         }
     }
+}
+
+// MARK: - Effect Container
+
+fileprivate class EffectContainer {
+    // currently only supports reverb:
+    var effect: AVAudioUnitReverb!
 }
 
 // MARK: - TrackController protocol definition
