@@ -202,6 +202,7 @@ fileprivate class TrackContainer: TrackController {
 
 // MARK: - Effect Container
 
+/// This is a fileprivate class that conforms to the public EffectController protocol. Used internally to manage the effects chain, exposed publically to provide controls (currently just wet/dry mix)
 fileprivate class EffectContainer: EffectController {
     // currently only supports reverb:
     var effect: AVAudioUnitReverb!
