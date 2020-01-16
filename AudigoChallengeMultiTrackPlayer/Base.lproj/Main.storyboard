@@ -56,7 +56,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-jp-OGV">
                                                     <rect key="frame" x="20" y="11.5" width="60" height="20.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="Ryl-sy-sJh"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Ryl-sy-sJh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -103,7 +103,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="43H-ya-Bdh">
                                                     <rect key="frame" x="20" y="11.5" width="60" height="20.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="3lk-RN-Cvl"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="3lk-RN-Cvl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
