@@ -72,7 +72,11 @@ class AudioController: NSObject {
             }
             
         }
-        
+    }
+    
+    public func stop() {
+        for player in playerNodes {  player.playerNode.stop() }
+        audioEngine.stop()
     }
     
     // MARK: - Private
