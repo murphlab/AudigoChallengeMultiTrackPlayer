@@ -91,12 +91,26 @@ class AudioController: NSObject {
     private var trackContainers = [TrackContainer]()
     
     private func setUpNodes() {
-        guard let audioProject = audioProject else {
-            return
-        }
         
         clearPlayerNodes()
         
+        setUpTracks()
+        
+    }
+
+    /// Detach current player nodes from the engine and clear the playerNodes array
+    private func clearPlayerNodes() {
+        for player in trackContainers {
+            audioEngine.detach(player.playerNode)
+            audioEngine.detach(player.mixerNode)
+        }
+        trackContainers = [TrackContainer]()
+    }
+    
+    private func setUpTracks() {
+        guard let audioProject = audioProject else {
+            return
+        }
         for trackFile in audioProject.tracks {
             guard let trackURL = Bundle.main.url(forResource: trackFile, withExtension: "wav") else {
                 // TODO: more elegant error handling
@@ -123,16 +137,6 @@ class AudioController: NSObject {
                                 to: audioEngine.mainMixerNode,
                                 format: player.buffer.format)
         }
-        
-    }
-    
-    /// Detach current player nodes from the engine and clear the playerNodes array
-    private func clearPlayerNodes() {
-        for player in trackContainers {
-            audioEngine.detach(player.playerNode)
-            audioEngine.detach(player.mixerNode)
-        }
-        trackContainers = [TrackContainer]()
     }
 }
 
