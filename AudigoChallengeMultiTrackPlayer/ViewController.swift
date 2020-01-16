@@ -66,7 +66,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - Track Cell Delegate
+// MARK: - Track Cell Delegate Implementation
 
 extension ViewController: TrackCellDelegate {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton) {
@@ -81,6 +81,8 @@ extension ViewController: TrackCellDelegate {
         print("VOLUME SLIDER FOR TRACK INDEX: \(idx) NAME: \(name)")
     }
 }
+
+// MARK: - Track Cell Class
 
 class TrackCell: UITableViewCell {
     @IBOutlet weak var trackNameLabel: UILabel!
@@ -97,6 +99,8 @@ class TrackCell: UITableViewCell {
         delegate?.trackCell(self, didChangeVolumeSlider: sender)
     }
 }
+
+// MARK: - Track Cell Delegate Protocol Definition
 
 protocol TrackCellDelegate: class {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton)
