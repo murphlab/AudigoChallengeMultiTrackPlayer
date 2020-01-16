@@ -47,6 +47,9 @@
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1X-Lk-EV1">
                                                     <rect key="frame" x="122" y="7" width="274" height="31"/>
+                                                    <connections>
+                                                        <action selector="volumeSliderChanged:" destination="ztG-KF-32p" eventType="valueChanged" id="bUF-jU-hkl"/>
+                                                    </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-jp-OGV">
                                                     <rect key="frame" x="20" y="11.5" width="60" height="20.5"/>
@@ -61,6 +64,9 @@
                                                     <rect key="frame" x="84" y="7" width="30" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="M"/>
+                                                    <connections>
+                                                        <action selector="muteButtonTapped:" destination="ztG-KF-32p" eventType="touchUpInside" id="Huc-cg-nM0"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
