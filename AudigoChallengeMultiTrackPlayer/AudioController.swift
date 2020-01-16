@@ -148,8 +148,7 @@ fileprivate class TrackContainer: TrackController {
     
     var volume: Float = 1 {
         didSet {
-            mute = false
-            mixerNode.volume = volume
+            if !mute { mixerNode.volume = volume }
         }
     }
     
