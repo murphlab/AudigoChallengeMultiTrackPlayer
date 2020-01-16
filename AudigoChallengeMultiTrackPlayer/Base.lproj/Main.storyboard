@@ -74,7 +74,6 @@
                                             <constraints>
                                                 <constraint firstItem="x1X-Lk-EV1" firstAttribute="trailing" secondItem="6gy-sh-Ldb" secondAttribute="trailingMargin" id="AjL-0U-qvn"/>
                                                 <constraint firstItem="4sZ-7M-4hZ" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="CVK-Ny-rrk"/>
-                                                <constraint firstItem="nnA-jp-OGV" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="T1q-NJ-Cfh"/>
                                                 <constraint firstItem="nnA-jp-OGV" firstAttribute="top" secondItem="6gy-sh-Ldb" secondAttribute="topMargin" constant="0.5" id="VaS-6V-tDq"/>
                                                 <constraint firstItem="x1X-Lk-EV1" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="W8n-j7-N6L"/>
                                                 <constraint firstItem="4sZ-7M-4hZ" firstAttribute="leading" secondItem="nnA-jp-OGV" secondAttribute="trailing" constant="4" id="Z7k-iW-5uG"/>
@@ -134,7 +133,6 @@
                                                 <constraint firstItem="n0u-nD-KNK" firstAttribute="leading" secondItem="DZh-ho-TxM" secondAttribute="trailing" constant="6" id="m61-Pt-i9l"/>
                                                 <constraint firstItem="DZh-ho-TxM" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="mSW-0G-vZ2"/>
                                                 <constraint firstItem="43H-ya-Bdh" firstAttribute="leading" secondItem="4u6-OG-8Lh" secondAttribute="leadingMargin" id="nYS-1Q-oKl"/>
-                                                <constraint firstItem="43H-ya-Bdh" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="ncf-4V-ACl"/>
                                                 <constraint firstItem="n0u-nD-KNK" firstAttribute="centerY" secondItem="4u6-OG-8Lh" secondAttribute="centerY" id="u1e-4d-R4h"/>
                                             </constraints>
                                         </tableViewCellContentView>
