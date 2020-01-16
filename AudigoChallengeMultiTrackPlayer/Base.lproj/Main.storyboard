@@ -48,22 +48,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1X-Lk-EV1">
-                                                    <rect key="frame" x="122" y="7" width="274" height="31"/>
+                                                    <rect key="frame" x="152" y="7" width="244" height="31"/>
                                                     <connections>
                                                         <action selector="volumeSliderChanged:" destination="ztG-KF-32p" eventType="valueChanged" id="bUF-jU-hkl"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-jp-OGV">
-                                                    <rect key="frame" x="20" y="11.5" width="60" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="90" height="20.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Ryl-sy-sJh"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Ryl-sy-sJh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sZ-7M-4hZ">
-                                                    <rect key="frame" x="84" y="7" width="30" height="30"/>
+                                                    <rect key="frame" x="114" y="7" width="30" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="M"/>
                                                     <connections>
@@ -95,22 +95,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="n0u-nD-KNK">
-                                                    <rect key="frame" x="121" y="7" width="238.5" height="31"/>
+                                                    <rect key="frame" x="151" y="7" width="208.5" height="31"/>
                                                     <connections>
                                                         <action selector="volumeSliderChanged:" destination="eDI-R8-iXL" eventType="valueChanged" id="wTd-tn-eow"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="43H-ya-Bdh">
-                                                    <rect key="frame" x="20" y="11.5" width="60" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="90" height="20.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="3lk-RN-Cvl"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="3lk-RN-Cvl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZh-ho-TxM">
-                                                    <rect key="frame" x="90" y="11.5" width="27" height="20.5"/>
+                                                    <rect key="frame" x="120" y="11.5" width="27" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
