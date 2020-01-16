@@ -73,13 +73,12 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: TrackCellDelegate {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton) {
         let idx = tableView.indexPath(for: trackCell)!.row
-        let name = audioController.audioProject!.tracks[idx]
-        
+        let trackController = audioController.trackController(forIndex: idx)!
+        trackController.mute = muteButton.isSelected
     }
     
     func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider) {
         let idx = tableView.indexPath(for: trackCell)!.row
-        let name = audioController.audioProject!.tracks[idx]
         let trackController = audioController.trackController(forIndex: idx)!
         trackController.volume = slider.value
     }
@@ -95,6 +94,7 @@ class TrackCell: UITableViewCell {
     weak var delegate: TrackCellDelegate?
     
     @IBAction func muteButtonTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
         delegate?.trackCell(self, didTapMuteButton: sender)
     }
     
