@@ -14,8 +14,12 @@ class ViewController: UIViewController {
     
     let audioController = AudioController()
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
         
         if let project = ProjectManager.loadAudioProjects()?[PROJECT_NAME] {
             
@@ -40,3 +44,22 @@ class ViewController: UIViewController {
 
 }
 
+// MARK: - Table View Delegate
+
+extension ViewController: UITableViewDelegate {
+
+}
+
+// MARK: - Table View Data Source
+
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return audioController.audioProject?.tracks.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath)
+        return cell
+    }
+}
