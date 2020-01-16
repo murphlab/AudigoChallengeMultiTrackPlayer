@@ -83,7 +83,7 @@ class AudioController: NSObject {
     
     private var audioEngine = AVAudioEngine()
     
-    private var playerNodes = [PlayerNodeContainer]()
+    private var playerNodes = [TrackContainer]()
     
     private func setUpNodes() {
         guard let audioProject = audioProject else {
@@ -98,7 +98,7 @@ class AudioController: NSObject {
                 fatalError("Could not obtail url for track: \(trackFile)")
             }
             //print("trackURL: \(String(describing: trackURL))")
-            let player = PlayerNodeContainer()
+            let player = TrackContainer()
             // TODO: more elegant error handling:
             let audioFile = try! AVAudioFile(forReading: trackURL)
             player.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
@@ -127,12 +127,12 @@ class AudioController: NSObject {
             audioEngine.detach(player.playerNode)
             audioEngine.detach(player.mixerNode)
         }
-        playerNodes = [PlayerNodeContainer]()
+        playerNodes = [TrackContainer]()
     }
 }
 
 /// Container for playerNode + associated stuff
-fileprivate class PlayerNodeContainer {
+fileprivate class TrackContainer {
     var playerNode = AVAudioPlayerNode()
     var buffer: AVAudioPCMBuffer!
     var mixerNode = AVAudioMixerNode()
