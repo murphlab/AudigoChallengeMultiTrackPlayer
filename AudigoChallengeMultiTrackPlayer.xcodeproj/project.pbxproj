@@ -21,6 +21,8 @@
 		BE36086823CF8C890020DAD0 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086623CF86390020DAD0 /* AudioController.swift */; };
 		BE36086A23CF8DD50020DAD0 /* AudioProjects.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE36086923CF8DD50020DAD0 /* AudioProjects.plist */; };
 		BE36086D23CF8F380020DAD0 /* AudioProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086C23CF8F380020DAD0 /* AudioProject.swift */; };
+		BE3F78FE250C57A90053A809 /* Pinhole Rhythm.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE3F78FC250C57A90053A809 /* Pinhole Rhythm.wav */; };
+		BE3F78FF250C57A90053A809 /* Pinhole Synths.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE3F78FD250C57A90053A809 /* Pinhole Synths.wav */; };
 		BED89E1423CF95990073A218 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED89E1323CF95990073A218 /* ProjectManager.swift */; };
 		BED89E1523CF95F60073A218 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED89E1323CF95990073A218 /* ProjectManager.swift */; };
 		BED89E1623CF96860073A218 /* AudioProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086C23CF8F380020DAD0 /* AudioProject.swift */; };
@@ -63,6 +65,8 @@
 		BE36086623CF86390020DAD0 /* AudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		BE36086923CF8DD50020DAD0 /* AudioProjects.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AudioProjects.plist; sourceTree = "<group>"; };
 		BE36086C23CF8F380020DAD0 /* AudioProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProject.swift; sourceTree = "<group>"; };
+		BE3F78FC250C57A90053A809 /* Pinhole Rhythm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pinhole Rhythm.wav"; sourceTree = "<group>"; };
+		BE3F78FD250C57A90053A809 /* Pinhole Synths.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pinhole Synths.wav"; sourceTree = "<group>"; };
 		BED89E1323CF95990073A218 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +154,8 @@
 		BE36086123CF83E90020DAD0 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				BE3F78FC250C57A90053A809 /* Pinhole Rhythm.wav */,
+				BE3F78FD250C57A90053A809 /* Pinhole Synths.wav */,
 				BE36086223CF84020020DAD0 /* Kick.wav */,
 				BE36086323CF84020020DAD0 /* Overheads.wav */,
 				BE36086923CF8DD50020DAD0 /* AudioProjects.plist */,
@@ -275,6 +281,8 @@
 				BE36081823CF7D610020DAD0 /* Assets.xcassets in Resources */,
 				BE36086423CF84020020DAD0 /* Kick.wav in Resources */,
 				BE36081623CF7D5F0020DAD0 /* Main.storyboard in Resources */,
+				BE3F78FF250C57A90053A809 /* Pinhole Synths.wav in Resources */,
+				BE3F78FE250C57A90053A809 /* Pinhole Rhythm.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
