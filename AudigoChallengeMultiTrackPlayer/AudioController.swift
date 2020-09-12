@@ -96,7 +96,7 @@ class AudioController: NSObject {
     private var effectsSubmixerNode = AVAudioMixerNode()
     private var trackContainers = [TrackContainer]()
     private var effectContainers = [EffectContainer]()
-        
+         
     private func setUpNodes() {
         clearPlayerNodes()
         setUpTracks()
@@ -128,6 +128,11 @@ class AudioController: NSObject {
             }
             //print("trackURL: \(String(describing: trackURL))")
             let player = TrackContainer()
+            
+            /*
+             NOTE: Using AVAudioPCMBuffer this way results in all audio data being loaded into RAM, which is not practical for typical audio projects
+             */
+            
             // TODO: more elegant error handling:
             let audioFile = try! AVAudioFile(forReading: trackURL)
             player.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
