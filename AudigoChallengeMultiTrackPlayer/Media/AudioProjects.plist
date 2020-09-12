@@ -14,5 +14,17 @@
 			<string>Reverb</string>
 		</array>
 	</dict>
+	<key>pinhole</key>
+	<dict>
+		<key>tracks</key>
+		<array>
+			<string>Pinhole Rhythm</string>
+			<string>Pinhole Synths</string>
+		</array>
+		<key>effects</key>
+		<array>
+			<string>Reverb</string>
+		</array>
+	</dict>
 </dict>
 </plist>
