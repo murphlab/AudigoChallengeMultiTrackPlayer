@@ -72,7 +72,7 @@ class AudioController: NSObject {
                 //player.playerNode.scheduleBuffer(player.buffer, at: nil, options: [.loops], completionHandler: nil)
                 
                 player.playerNode.scheduleFile(player.audioFile, at: nil) {
-                    print("COMPLETE")
+                    print("COMPLETE: \(player.audioFile.url)")
                 }
                 
                 player.playerNode.play(at: startTime)
