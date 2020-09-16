@@ -67,7 +67,14 @@ class AudioController: NSObject {
                     startTime = AVAudioTime(sampleTime: startSampleTime, atRate: outputFormat.sampleRate)
                     
                 }
-                player.playerNode.scheduleBuffer(player.buffer, at: nil, options: [.loops], completionHandler: nil)
+                
+                
+                //player.playerNode.scheduleBuffer(player.buffer, at: nil, options: [.loops], completionHandler: nil)
+                
+                player.playerNode.scheduleFile(player.audioFile, at: nil) {
+                    print("COMPLETE: \(player.audioFile.url)")
+                }
+                
                 player.playerNode.play(at: startTime)
             }
             
@@ -134,23 +141,22 @@ class AudioController: NSObject {
              */
             
             // TODO: more elegant error handling:
-            let audioFile = try! AVAudioFile(forReading: trackURL)
-            player.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
+            //player.buffer = AVAudioPCMBuffer(pcmFormat: audioFile.processingFormat, frameCapacity: AVAudioFrameCount(audioFile.length))
             do {
-                try audioFile.read(into: player.buffer)
+                player.audioFile = try AVAudioFile(forReading: trackURL)
             } catch {
                 // TODO: more elegant error handling
-                fatalError("Error reading audio file \(trackFile) into buffer: \(error)")
+                fatalError("Error reading audio file \(trackFile) error: \(error.localizedDescription)")
             }
             trackContainers.append(player)
             audioEngine.attach(player.playerNode)
             audioEngine.attach(player.mixerNode)
             audioEngine.connect(player.playerNode,
                                 to: player.mixerNode,
-                                format: player.buffer.format)
+                                format: player.audioFile.processingFormat)
             audioEngine.connect(player.mixerNode,
                                 to: tracksSubmixerNode,
-                                format: player.buffer.format)
+                                format: player.audioFile.processingFormat)
         }
     }
     
@@ -190,7 +196,8 @@ class AudioController: NSObject {
 /// This is a fileprivate class that conforms to the public TrackController protocol. Used internally to manage AVAudioNodes per-track, exposed publically to provide volume, mute, (etc?)
 fileprivate class TrackContainer: TrackController {
     var playerNode = AVAudioPlayerNode()
-    var buffer: AVAudioPCMBuffer!
+    //var buffer: AVAudioPCMBuffer!
+    var audioFile: AVAudioFile!
     var mixerNode = AVAudioMixerNode()
     
     // conform to TrackController:
