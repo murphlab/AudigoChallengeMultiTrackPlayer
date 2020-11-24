@@ -58,12 +58,16 @@ class AudioController: NSObject {
             
             var startTime: AVAudioTime? = nil
             
+            //var varDelay = 0.0
+            
             for player in trackContainers {
                 
                 if startTime == nil {
                     let delayTime = 0.1
                     let outputFormat = player.playerNode.outputFormat(forBus: 0)
                     let startSampleTime = player.playerNode.lastRenderTime!.sampleTime + AVAudioFramePosition(delayTime * outputFormat.sampleRate)
+                    //let startSampleTime = AVAudioFramePosition(varDelay * outputFormat.sampleRate)
+                    //varDelay += 5
                     startTime = AVAudioTime(sampleTime: startSampleTime, atRate: outputFormat.sampleRate)
                     
                 }
@@ -75,7 +79,9 @@ class AudioController: NSObject {
                     print("COMPLETE: \(player.audioFile.url)")
                 }
                 
+
                 player.playerNode.play(at: startTime)
+                //player.playerNode.play()
             }
             
         }
@@ -87,6 +93,73 @@ class AudioController: NSObject {
     }
     
     public func render() {
+        
+        guard let sourceFile = trackContainers.first?.audioFile else {
+            print("Ain't nuthin to render")
+            return
+        }
+        
+        do {
+            // The maximum number of frames the engine renders in any single render call.
+            let maxFrames: AVAudioFrameCount = 4096
+            try audioEngine.enableManualRenderingMode(.offline, format: sourceFile.processingFormat,
+                                                 maximumFrameCount: maxFrames)
+        } catch {
+            fatalError("Enabling manual rendering mode failed: \(error).")
+        }
+        
+        play()
+        
+        // The output buffer to which the engine renders the processed data.
+        let buffer = AVAudioPCMBuffer(pcmFormat: audioEngine.manualRenderingFormat,
+                                      frameCapacity: audioEngine.manualRenderingMaximumFrameCount)!
+
+        let outputFile: AVAudioFile
+        do {
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let outputURL = documentsURL.appendingPathComponent("Rhythm-processed.caf")
+            print("output url: ", outputURL)
+            outputFile = try AVAudioFile(forWriting: outputURL, settings: sourceFile.fileFormat.settings)
+        } catch {
+            fatalError("Unable to open output audio file: \(error).")
+        }
+        
+        // FIXME: THIS BLOCKS, NO?
+        
+        while audioEngine.manualRenderingSampleTime < sourceFile.length {
+            do {
+                let frameCount = sourceFile.length - audioEngine.manualRenderingSampleTime
+                let framesToRender = min(AVAudioFrameCount(frameCount), buffer.frameCapacity)
+                
+                let status = try audioEngine.renderOffline(framesToRender, to: buffer)
+                
+                switch status {
+                    
+                case .success:
+                    // The data rendered successfully. Write it to the output file.
+                    try outputFile.write(from: buffer)
+                    
+                case .insufficientDataFromInputNode:
+                    // Applicable only when using the input node as one of the sources.
+                    break
+                    
+                case .cannotDoInCurrentContext:
+                    // The engine couldn't render in the current render call.
+                    // Retry in the next iteration.
+                    break
+                    
+                case .error:
+                    // An error occurred while rendering the audio.
+                    fatalError("The manual rendering failed.")
+                }
+            } catch {
+                fatalError("The manual rendering failed: \(error).")
+            }
+        }
+
+        // Stop the player node and engine.
+
+        stop()
         
     }
     
