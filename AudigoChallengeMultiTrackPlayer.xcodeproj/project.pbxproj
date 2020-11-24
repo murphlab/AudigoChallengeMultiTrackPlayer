@@ -23,6 +23,7 @@
 		BE36086D23CF8F380020DAD0 /* AudioProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086C23CF8F380020DAD0 /* AudioProject.swift */; };
 		BE3F78FE250C57A90053A809 /* Pinhole Rhythm.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE3F78FC250C57A90053A809 /* Pinhole Rhythm.wav */; };
 		BE3F78FF250C57A90053A809 /* Pinhole Synths.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE3F78FD250C57A90053A809 /* Pinhole Synths.wav */; };
+		BE3FFC7E256D86250019C041 /* TimeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3FFC7D256D86250019C041 /* TimeExtensions.swift */; };
 		BED89E1423CF95990073A218 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED89E1323CF95990073A218 /* ProjectManager.swift */; };
 		BED89E1523CF95F60073A218 /* ProjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED89E1323CF95990073A218 /* ProjectManager.swift */; };
 		BED89E1623CF96860073A218 /* AudioProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36086C23CF8F380020DAD0 /* AudioProject.swift */; };
@@ -67,6 +68,7 @@
 		BE36086C23CF8F380020DAD0 /* AudioProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioProject.swift; sourceTree = "<group>"; };
 		BE3F78FC250C57A90053A809 /* Pinhole Rhythm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pinhole Rhythm.wav"; sourceTree = "<group>"; };
 		BE3F78FD250C57A90053A809 /* Pinhole Synths.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Pinhole Synths.wav"; sourceTree = "<group>"; };
+		BE3FFC7D256D86250019C041 /* TimeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeExtensions.swift; sourceTree = "<group>"; };
 		BED89E1323CF95990073A218 /* ProjectManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 		BE36080D23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				BE3FFC7D256D86250019C041 /* TimeExtensions.swift */,
 				BE36086123CF83E90020DAD0 /* Media */,
 				BE36086B23CF8F110020DAD0 /* Model */,
 				BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */,
@@ -313,6 +316,7 @@
 				BE36080F23CF7D5F0020DAD0 /* AppDelegate.swift in Sources */,
 				BE36086723CF86390020DAD0 /* AudioController.swift in Sources */,
 				BE36081123CF7D5F0020DAD0 /* SceneDelegate.swift in Sources */,
+				BE3FFC7E256D86250019C041 /* TimeExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

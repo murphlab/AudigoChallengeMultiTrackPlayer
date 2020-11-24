@@ -98,6 +98,8 @@ class AudioController: NSObject {
     
     public func render() {
         
+        let startRenderTime = DispatchTime.now()
+        
         guard let sourceFile = trackContainers.first?.audioFile else {
             print("Ain't nuthin to render")
             return
@@ -164,6 +166,8 @@ class AudioController: NSObject {
         // Stop the player node and engine.
 
         stop()
+        
+        DispatchTime.logSecondsSince(startRenderTime, label: "RENDER TIME")
         
     }
     
