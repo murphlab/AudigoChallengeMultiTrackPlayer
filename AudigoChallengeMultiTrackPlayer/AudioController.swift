@@ -86,6 +86,10 @@ class AudioController: NSObject {
         audioEngine.stop()
     }
     
+    public func render() {
+        
+    }
+    
     public func trackController(forIndex index: Int) -> TrackController? {
         if index >= trackContainers.count { return nil }
         return trackContainers[index]

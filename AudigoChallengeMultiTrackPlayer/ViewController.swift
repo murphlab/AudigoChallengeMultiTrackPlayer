@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func renderButtonTapped(_ sender: Any) {
+        audioController.render()
     }
     
     // MARK: - Private
