@@ -26,5 +26,17 @@
 			<string>Reverb</string>
 		</array>
 	</dict>
+	<key>phase</key>
+	<dict>
+		<key>tracks</key>
+		<array>
+			<string>Phase Test Track A</string>
+			<string>Phase Test Track B</string>
+		</array>
+		<key>effects</key>
+		<array>
+			<string>Reverb</string>
+		</array>
+	</dict>
 </dict>
 </plist>
