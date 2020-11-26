@@ -40,6 +40,10 @@ class ViewController: UIViewController {
         audioController.stop()
     }
     
+    @IBAction func renderButtonTapped(_ sender: Any) {
+        audioController.render()
+    }
+    
     // MARK: - Private
 
 }
