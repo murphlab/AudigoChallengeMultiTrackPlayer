@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let PROJECT_NAME = "phase2"
+    let PROJECT_NAME = "pinhole"
     
     let audioController = AudioController()
 
