@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE217ACF260AA02700941DB6 /* Mono Sine B.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE217ACD260AA02700941DB6 /* Mono Sine B.wav */; };
+		BE217AD0260AA02700941DB6 /* Mono Sine A.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE217ACE260AA02700941DB6 /* Mono Sine A.wav */; };
 		BE36080F23CF7D5F0020DAD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */; };
 		BE36081123CF7D5F0020DAD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36081023CF7D5F0020DAD0 /* SceneDelegate.swift */; };
 		BE36081323CF7D5F0020DAD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36081223CF7D5F0020DAD0 /* ViewController.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE217ACD260AA02700941DB6 /* Mono Sine B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Mono Sine B.wav"; sourceTree = "<group>"; };
+		BE217ACE260AA02700941DB6 /* Mono Sine A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Mono Sine A.wav"; sourceTree = "<group>"; };
 		BE36080B23CF7D5F0020DAD0 /* AudigoChallengeMultiTrackPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudigoChallengeMultiTrackPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE36080E23CF7D5F0020DAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE36081023CF7D5F0020DAD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 		BE36086123CF83E90020DAD0 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				BE217ACE260AA02700941DB6 /* Mono Sine A.wav */,
+				BE217ACD260AA02700941DB6 /* Mono Sine B.wav */,
 				BE3FFC92256F44130019C041 /* Phase Test Track A.wav */,
 				BE3FFC93256F44130019C041 /* Phase Test Track B.wav */,
 				BE3F78FC250C57A90053A809 /* Pinhole Rhythm.wav */,
@@ -292,7 +298,9 @@
 				BE36086423CF84020020DAD0 /* Kick.wav in Resources */,
 				BE36081623CF7D5F0020DAD0 /* Main.storyboard in Resources */,
 				BE3F78FF250C57A90053A809 /* Pinhole Synths.wav in Resources */,
+				BE217AD0260AA02700941DB6 /* Mono Sine A.wav in Resources */,
 				BE3F78FE250C57A90053A809 /* Pinhole Rhythm.wav in Resources */,
+				BE217ACF260AA02700941DB6 /* Mono Sine B.wav in Resources */,
 				BE3FFC94256F44130019C041 /* Phase Test Track A.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

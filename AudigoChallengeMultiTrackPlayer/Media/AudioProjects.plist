@@ -38,5 +38,17 @@
 			<string>Reverb</string>
 		</array>
 	</dict>
+	<key>phase2</key>
+	<dict>
+		<key>tracks</key>
+		<array>
+			<string>Mono Sine A</string>
+			<string>Mono Sine B</string>
+		</array>
+		<key>effects</key>
+		<array>
+			<string>Reverb</string>
+		</array>
+	</dict>
 </dict>
 </plist>
