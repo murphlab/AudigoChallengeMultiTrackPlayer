@@ -105,6 +105,7 @@ class AudioController: NSObject {
         do {
             // The maximum number of frames the engine renders in any single render call.
             let maxFrames: AVAudioFrameCount = 4096
+            print("PROCESSING FORMAT: ", sourceFile.processingFormat)
             try audioEngine.enableManualRenderingMode(.offline, format: sourceFile.processingFormat,
                                                  maximumFrameCount: maxFrames)
         } catch {
@@ -120,7 +121,10 @@ class AudioController: NSObject {
         let outputFile: AVAudioFile
         do {
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let outputURL = documentsURL.appendingPathComponent("Rhythm-processed.caf")
+            // Extension determines format (caf, wav, aif):
+            //let outputURL = documentsURL.appendingPathComponent("Rhythm-processed.caf")
+            //let outputURL = documentsURL.appendingPathComponent("Rhythm-processed.wav")
+            let outputURL = documentsURL.appendingPathComponent("Rhythm-processed.aif")
             print("output url: ", outputURL)
             outputFile = try AVAudioFile(forWriting: outputURL, settings: sourceFile.fileFormat.settings)
         } catch {
