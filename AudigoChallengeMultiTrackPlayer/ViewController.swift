@@ -106,6 +106,9 @@ extension ViewController: TrackCellDelegate {
         let idx = tableView.indexPath(for: trackCell)!.row
         let trackController = audioController.trackController(forIndex: idx)!
         trackController.volume = slider.value
+        
+        let gain = (trackController as! TrackContainer).eqNode.globalGain
+        trackCell.dbLabel.text = String(format: "%.2f", gain)
     }
 }
 
@@ -125,6 +128,7 @@ class TrackCell: UITableViewCell {
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var muteButton: UIButton!
     @IBOutlet weak var volumeSlider: UISlider!
+    @IBOutlet weak var dbLabel: UILabel!
     
     weak var delegate: TrackCellDelegate?
     
