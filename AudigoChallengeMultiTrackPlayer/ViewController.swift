@@ -79,7 +79,7 @@ extension ViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackCell
             cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
             let trackContainer = audioController.trackContainers[indexPath.row]
-            cell.faderSlider.value = trackContainer.volume
+            cell.faderSlider.value = trackContainer.faderValue
             cell.delegate = self
             return cell
         } else {
@@ -105,7 +105,7 @@ extension ViewController: TrackCellDelegate {
     func trackCell(_ trackCell: TrackCell, didChangeFaderSlider slider: UISlider) {
         let idx = tableView.indexPath(for: trackCell)!.row
         let trackController = audioController.trackContainers[idx]
-        trackController.volume = slider.value
+        trackController.faderValue = slider.value
         
         trackCell.dbLabel.text = String(format: "%.2f", trackController.eqNode.globalGain)
     }

@@ -288,10 +288,22 @@ class TrackContainer {
     
     // conform to TrackController:
     
-    // HEY! 'volume' is really just the slider value
-    var volume: Float = 1 {
+    let faderZeroPosition: Float = 0.75
+    
+    lazy var faderValue: Float = faderZeroPosition {
         didSet {
-            eqNode.globalGain = log10(volume) * 20
+            // map fader phase 1: adjust for faderZeroPosition:
+            var mappedFader: Float
+            if faderValue > faderZeroPosition {
+                mappedFader = 1 + (faderValue - faderZeroPosition) / (1 - faderZeroPosition)
+            } else {
+                mappedFader = 1 + (faderValue - faderZeroPosition) / faderZeroPosition
+            }
+            let verySmallNumber: Float = 0.0001
+            mappedFader = max(verySmallNumber, mappedFader)
+            print("faderValue:", faderValue)
+            print("mappedFader:", mappedFader)
+            eqNode.globalGain = log10(mappedFader) * 20
             print("gain: \(eqNode.globalGain)")
         }
     }
