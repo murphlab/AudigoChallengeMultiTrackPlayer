@@ -42,6 +42,8 @@ class AudioController: NSObject {
     /// current audio project, publicly readonly. use setAudioProject to set
     private(set) public var audioProject: AudioProject?
     
+    public var trackContainers = [TrackContainer]()
+
     
     /// set audio project
     // TODO: throw?
@@ -172,11 +174,6 @@ class AudioController: NSObject {
         
     }
     
-    public func trackController(forIndex index: Int) -> TrackController? {
-        if index >= trackContainers.count { return nil }
-        return trackContainers[index]
-    }
-    
     public func effectController(forIndex index: Int) -> EffectController? {
         if index >= effectContainers.count { return nil }
         return effectContainers[index]
@@ -187,7 +184,6 @@ class AudioController: NSObject {
     private var audioEngine = AVAudioEngine()
     private var tracksSubmixerNode = AVAudioMixerNode()
     private var effectsSubmixerNode = AVAudioMixerNode()
-    private var trackContainers = [TrackContainer]()
     private var effectContainers = [EffectContainer]()
          
     private func setUpNodes() {
@@ -283,8 +279,7 @@ class AudioController: NSObject {
 
 // MARK: - Track Container
 
-/// This is a fileprivate class that conforms to the public TrackController protocol. Used internally to manage AVAudioNodes per-track, exposed publically to provide volume, mute, (etc?)
-class TrackContainer: TrackController {
+class TrackContainer {
     var playerNode = AVAudioPlayerNode()
     //var buffer: AVAudioPCMBuffer!
     var audioFile: AVAudioFile!
@@ -325,13 +320,6 @@ fileprivate class EffectContainer: EffectController {
             effect.wetDryMix = newValue
         }
     }
-}
-
-// MARK: - TrackController protocol definition
-
-public protocol TrackController: class {
-    var volume: Float { get set }
-    var mute: Bool { get set }
 }
 
 // MARK: EffectController protocol definition

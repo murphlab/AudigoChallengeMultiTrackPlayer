@@ -78,8 +78,8 @@ extension ViewController: UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackCell
             cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
-            let trackController = audioController.trackController(forIndex: indexPath.row)!
-            cell.faderSlider.value = trackController.volume
+            let trackContainer = audioController.trackContainers[indexPath.row]
+            cell.faderSlider.value = trackContainer.volume
             cell.delegate = self
             return cell
         } else {
@@ -98,17 +98,16 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: TrackCellDelegate {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton) {
         let idx = tableView.indexPath(for: trackCell)!.row
-        let trackController = audioController.trackController(forIndex: idx)!
-        trackController.mute = muteButton.isSelected
+        let trackContainer = audioController.trackContainers[idx]
+        trackContainer.mute = muteButton.isSelected
     }
     
     func trackCell(_ trackCell: TrackCell, didChangeFaderSlider slider: UISlider) {
         let idx = tableView.indexPath(for: trackCell)!.row
-        let trackController = audioController.trackController(forIndex: idx)!
+        let trackController = audioController.trackContainers[idx]
         trackController.volume = slider.value
         
-        let gain = (trackController as! TrackContainer).eqNode.globalGain
-        trackCell.dbLabel.text = String(format: "%.2f", gain)
+        trackCell.dbLabel.text = String(format: "%.2f", trackController.eqNode.globalGain)
     }
 }
 
