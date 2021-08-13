@@ -79,7 +79,7 @@ extension ViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackCell
             cell.trackNameLabel.text = audioController.audioProject?.tracks[indexPath.row]
             let trackController = audioController.trackController(forIndex: indexPath.row)!
-            cell.volumeSlider.value = trackController.volume
+            cell.faderSlider.value = trackController.volume
             cell.delegate = self
             return cell
         } else {
@@ -102,7 +102,7 @@ extension ViewController: TrackCellDelegate {
         trackController.mute = muteButton.isSelected
     }
     
-    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider) {
+    func trackCell(_ trackCell: TrackCell, didChangeFaderSlider slider: UISlider) {
         let idx = tableView.indexPath(for: trackCell)!.row
         let trackController = audioController.trackController(forIndex: idx)!
         trackController.volume = slider.value
@@ -127,7 +127,7 @@ extension ViewController: EffectCellDelegate {
 class TrackCell: UITableViewCell {
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var muteButton: UIButton!
-    @IBOutlet weak var volumeSlider: UISlider!
+    @IBOutlet weak var faderSlider: UISlider!
     @IBOutlet weak var dbLabel: UILabel!
     
     weak var delegate: TrackCellDelegate?
@@ -137,8 +137,8 @@ class TrackCell: UITableViewCell {
         delegate?.trackCell(self, didTapMuteButton: sender)
     }
     
-    @IBAction func volumeSliderChanged(_ sender: UISlider) {
-        delegate?.trackCell(self, didChangeVolumeSlider: sender)
+    @IBAction func faderSliderChanged(_ sender: UISlider) {
+        delegate?.trackCell(self, didChangeFaderSlider: sender)
     }
 }
 
@@ -146,7 +146,7 @@ class TrackCell: UITableViewCell {
 
 protocol TrackCellDelegate: class {
     func trackCell(_ trackCell: TrackCell, didTapMuteButton muteButton: UIButton)
-    func trackCell(_ trackCell: TrackCell, didChangeVolumeSlider slider: UISlider)
+    func trackCell(_ trackCell: TrackCell, didChangeFaderSlider slider: UISlider)
 }
 
 // MARK: - Effect Cell Class

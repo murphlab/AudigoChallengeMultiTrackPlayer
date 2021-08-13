@@ -61,7 +61,7 @@
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1.0000000000000001e-05" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="x1X-Lk-EV1">
                                                     <rect key="frame" x="134" y="7" width="196" height="31"/>
                                                     <connections>
-                                                        <action selector="volumeSliderChanged:" destination="ztG-KF-32p" eventType="valueChanged" id="bUF-jU-hkl"/>
+                                                        <action selector="faderSliderChanged:" destination="ztG-KF-32p" eventType="valueChanged" id="bUF-jU-hkl"/>
                                                     </connections>
                                                 </slider>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nnA-jp-OGV">
@@ -106,9 +106,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dbLabel" destination="5jR-t1-v4S" id="YqE-8F-p8A"/>
+                                            <outlet property="faderSlider" destination="x1X-Lk-EV1" id="1gP-3V-8ft"/>
                                             <outlet property="muteButton" destination="4sZ-7M-4hZ" id="U8g-cY-pqh"/>
                                             <outlet property="trackNameLabel" destination="nnA-jp-OGV" id="0s4-Wg-HMa"/>
-                                            <outlet property="volumeSlider" destination="x1X-Lk-EV1" id="1gP-3V-8ft"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EffectCell" id="eDI-R8-iXL" customClass="EffectCell" customModule="AudigoChallengeMultiTrackPlayer" customModuleProvider="target">
