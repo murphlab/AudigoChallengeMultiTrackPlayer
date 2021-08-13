@@ -58,7 +58,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1X-Lk-EV1">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0001" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="x1X-Lk-EV1">
                                                     <rect key="frame" x="134" y="7" width="196" height="31"/>
                                                     <connections>
                                                         <action selector="volumeSliderChanged:" destination="ztG-KF-32p" eventType="valueChanged" id="bUF-jU-hkl"/>

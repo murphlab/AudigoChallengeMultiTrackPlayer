@@ -293,15 +293,17 @@ fileprivate class TrackContainer: TrackController {
     
     // conform to TrackController:
     
+    // HEY! 'volume' is really just the slider value
     var volume: Float = 1 {
         didSet {
-            if !mute { mixerNode.volume = volume }
+            eqNode.globalGain = log10(volume) * 20
+            print("gain: \(eqNode.globalGain)")
         }
     }
     
     var mute: Bool = false {
         didSet {
-            mixerNode.volume = mute ? 0 : volume
+            mixerNode.volume = mute ? 0 : 1
         }
     }
 }
