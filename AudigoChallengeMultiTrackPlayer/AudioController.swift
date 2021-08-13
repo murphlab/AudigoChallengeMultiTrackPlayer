@@ -286,25 +286,20 @@ class TrackContainer {
     var eqNode = AVAudioUnitEQ()
     var mixerNode = AVAudioMixerNode()
     
-    // conform to TrackController:
-    
     let faderZeroPosition: Float = 0.75
     
     lazy var faderValue: Float = faderZeroPosition {
         didSet {
-            // map fader phase 1: adjust for faderZeroPosition:
-            var mappedFader: Float
-            if faderValue > faderZeroPosition {
-                mappedFader = 1 + (faderValue - faderZeroPosition) / (1 - faderZeroPosition)
-            } else {
-                mappedFader = 1 + (faderValue - faderZeroPosition) / faderZeroPosition
-            }
+            var mappedFader = 1 + (faderValue - faderZeroPosition) / (faderValue > faderZeroPosition ? 1 - faderZeroPosition : faderZeroPosition)
             let verySmallNumber: Float = 0.0001
             mappedFader = max(verySmallNumber, mappedFader)
+            var gainDb = log10(mappedFader) * 20
+            let maxGainDb: Float = 6
+            gainDb = min(maxGainDb, gainDb)
             print("faderValue:", faderValue)
             print("mappedFader:", mappedFader)
-            eqNode.globalGain = log10(mappedFader) * 20
-            print("gain: \(eqNode.globalGain)")
+            print("gainDb: \(gainDb)")
+            eqNode.globalGain = gainDb
         }
     }
     
