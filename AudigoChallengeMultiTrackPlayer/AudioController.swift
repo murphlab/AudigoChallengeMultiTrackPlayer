@@ -236,8 +236,12 @@ class AudioController: NSObject {
             }
             trackContainers.append(player)
             audioEngine.attach(player.playerNode)
+            audioEngine.attach(player.eqNode)
             audioEngine.attach(player.mixerNode)
             audioEngine.connect(player.playerNode,
+                                to: player.eqNode,
+                                format: player.audioFile.processingFormat)
+            audioEngine.connect(player.eqNode,
                                 to: player.mixerNode,
                                 format: player.audioFile.processingFormat)
             audioEngine.connect(player.mixerNode,
@@ -284,6 +288,7 @@ fileprivate class TrackContainer: TrackController {
     var playerNode = AVAudioPlayerNode()
     //var buffer: AVAudioPCMBuffer!
     var audioFile: AVAudioFile!
+    var eqNode = AVAudioUnitEQ()
     var mixerNode = AVAudioMixerNode()
     
     // conform to TrackController:
