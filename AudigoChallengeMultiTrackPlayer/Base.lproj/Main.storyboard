@@ -59,7 +59,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x1X-Lk-EV1">
-                                                    <rect key="frame" x="134" y="7" width="262" height="31"/>
+                                                    <rect key="frame" x="134" y="7" width="196" height="31"/>
                                                     <connections>
                                                         <action selector="volumeSliderChanged:" destination="ztG-KF-32p" eventType="valueChanged" id="bUF-jU-hkl"/>
                                                     </connections>
@@ -81,13 +81,24 @@
                                                         <action selector="muteButtonTapped:" destination="ztG-KF-32p" eventType="touchUpInside" id="Huc-cg-nM0"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jR-t1-v4S">
+                                                    <rect key="frame" x="334" y="12" width="60" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="FWA-v4-40v"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="x1X-Lk-EV1" firstAttribute="trailing" secondItem="6gy-sh-Ldb" secondAttribute="trailingMargin" id="AjL-0U-qvn"/>
                                                 <constraint firstItem="4sZ-7M-4hZ" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="CVK-Ny-rrk"/>
+                                                <constraint firstItem="5jR-t1-v4S" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="QP6-ws-3hR"/>
+                                                <constraint firstItem="5jR-t1-v4S" firstAttribute="leading" secondItem="x1X-Lk-EV1" secondAttribute="trailing" constant="6" id="SsA-Xm-XOK"/>
                                                 <constraint firstItem="nnA-jp-OGV" firstAttribute="top" secondItem="6gy-sh-Ldb" secondAttribute="topMargin" constant="0.5" id="VaS-6V-tDq"/>
                                                 <constraint firstItem="x1X-Lk-EV1" firstAttribute="centerY" secondItem="6gy-sh-Ldb" secondAttribute="centerY" id="W8n-j7-N6L"/>
                                                 <constraint firstItem="4sZ-7M-4hZ" firstAttribute="leading" secondItem="nnA-jp-OGV" secondAttribute="trailing" constant="4" id="Z7k-iW-5uG"/>
+                                                <constraint firstItem="5jR-t1-v4S" firstAttribute="trailing" secondItem="6gy-sh-Ldb" secondAttribute="trailingMargin" id="fFT-bA-rzG"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="nnA-jp-OGV" secondAttribute="bottom" constant="0.5" id="ffx-DF-RXU"/>
                                                 <constraint firstItem="x1X-Lk-EV1" firstAttribute="leading" secondItem="4sZ-7M-4hZ" secondAttribute="trailing" constant="10" id="g8v-5A-Q89"/>
                                                 <constraint firstItem="nnA-jp-OGV" firstAttribute="leading" secondItem="6gy-sh-Ldb" secondAttribute="leadingMargin" id="vyS-u9-sFE"/>
